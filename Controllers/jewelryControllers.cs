@@ -48,7 +48,7 @@ this.ijewerlyService=ijewerlyService;
       return NoContent();
 
     }
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public ActionResult Delete(int id)// ID מוחק אוביקט לפי 
     {
  Jewel? jewel= ijewerlyService.Get(id);

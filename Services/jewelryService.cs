@@ -5,15 +5,15 @@ using project.Models;
 namespace  project.Services
 {
 public   class jewelryService:IjewerlyService{
- private  List<Jewel> jewerlyList{get;}
+ private  List<Jewel> jewerlyList{get;set;}
  
 
     public jewelryService()//בנאי סטטי שנקרא בפעם הראשונה שהמחלקה נטענת
     {
         jewerlyList = new List<Jewel> 
         {
-            new Jewel { Id = 1, Name = "עגילי חישוק כסף שיבוץ פאווה" ,Category=CategoryJewel.EARRINGS,Price=425},
-            new Jewel { Id = 2, Name = "טבעת כסף משאלת הנסיכה" ,Category=CategoryJewel.RING,Price=379 }
+            new() { Id = 1, Name = "עגילי חישוק כסף שיבוץ פאווה" ,Category=CategoryJewel.EARRINGS,Price=425},
+            new() { Id = 2, Name = "טבעת כסף משאלת הנסיכה" ,Category=CategoryJewel.RING,Price=379 }
         };
     }
    public  List<Jewel> Get()=>//פונקציה לקבלת הנתונים 
@@ -49,13 +49,12 @@ if(jewel != null)
  jewerlyList.RemoveAt(index);
 }
 }
-
-    
-
-    
-
-
-
+ }
+ public static class jewelryServiceHelper{
+    public static void AddJewelService(this IServiceCollection builderService)
+    {
+        builderService.AddSingleton<IjewerlyService, jewelryService>();
+    }
  }
  
 }

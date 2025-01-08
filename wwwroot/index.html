@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jewelry crud</title>
+   <link rel="stylesheet" href="./css/site.css">
+</head>
+<body>
+    <h1>jewelry crud</h1>
+    <h3>Add</h3>
+    <form  onsubmit="addJewel(event)">
+        <input type="text" id="add-name" placeholder="name">
+        <input type="number" id="add-price" placeholder="price">
+        <select name="options" placeholder="category" id="add-category">
+            <option>category</option>
+            <option>ring</option>
+            <option >earrings</option>
+            <option >bracelet</option>
+            <option>necklace</option>
+        </select>
+        <input type="submit" value="Add">
+    </form>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>price</th>
+            <th>category</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="jewelry"></tbody>
+    </table>
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form  onsubmit="updatejewel(event)">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name" placeholder="name">
+            <input type="number" id="edit-price" placeholder="price">
+            <select name="options" placeholder="category" id="edit-category">
+                <option>category</option>
+                <option>ring</option>
+                <option >earrings</option>
+                <option >bracelet</option>
+                <option>necklace</option>
+            </select>
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+    <script src="./js/site.js"></script> 
+    <script type="text/javascript">
+        getJewelry();
+    </script>
+</body>
+
+</html>
