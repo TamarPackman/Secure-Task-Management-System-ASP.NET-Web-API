@@ -1,22 +1,16 @@
 const url='/jewerly'
 jewelryList=[];
 const addJewel=(event)=>{
-    
     event.preventDefault();
-
     const name=document.getElementById('add-name')
-
     const price=document.getElementById('add-price')
     const category=document.getElementById('add-category')
-   
-   
     const newJewel={
         id:0,
         name:name.value.trim(),
         price:price.value.trim(),
         category:category.selectedIndex
     }
-    
     fetch(url, {
         method: 'POST',
         headers: {
@@ -24,16 +18,12 @@ const addJewel=(event)=>{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(newJewel)
-       
     })
     .then(response => response.json() )
-
     .then(() => {
-       
         getJewelry();
         name.value=''
         price.value=''
-
     })
     .catch(error => alert('Unable to add jewel.', error));
 }
@@ -47,6 +37,7 @@ fetch(url)
 }
 
 const  _displayItems=(data) =>{
+   
     const tBody = document.getElementById('jewelry');
     tBody.innerHTML = '';
      const button = document.createElement('button');
@@ -55,7 +46,6 @@ const  _displayItems=(data) =>{
         let editButton = button.cloneNode(false);
         editButton.innerText = 'Edit';
         editButton.setAttribute('onclick', `displayEditForm(${item.id})`);
-
         let deleteButton = button.cloneNode(false);
         deleteButton.innerText = 'Delete';
         deleteButton.setAttribute('onclick', `deleteJewel(${item.id})`);
@@ -67,26 +57,21 @@ const  _displayItems=(data) =>{
         let tdPrice = displayJewelInRow.insertCell(2);
         tdPrice.innerHTML=item.price;
         let tdCategory=displayJewelInRow.insertCell(3)
-      
         let tdEdit=displayJewelInRow.insertCell(4)
         tdEdit.appendChild( editButton)
         let tdDelete=displayJewelInRow.insertCell(5)
 tdDelete.appendChild(deleteButton)
-        
-        tdCategory.innerHTML=item.category
-
+const firstSelect = document.querySelector("select");
+        tdCategory.innerHTML= firstSelect.options[item.category].value;
     });
     jewelryList=data
-   
 }
 const displayEditForm=(id)=>{
     const item = jewelryList.find(item => item.id === id);
    document.getElementById('edit-name').value=item.name
     document.getElementById('edit-id').value=item.id
-
    document.getElementById('edit-price').value=item.price
    document.getElementById('edit-category').selectedIndex=item.category
-    
     document.getElementById('editForm').style.display = 'block';
 }
 const updatejewel=(event)=>{
@@ -98,7 +83,6 @@ const updatejewel=(event)=>{
         name: document.getElementById('edit-name').value.trim(),
         category:document.getElementById('edit-category').selectedIndex
     };
-   
     fetch(`${url}/${jewelId}`, {
             method: 'PUT',
             headers: {
@@ -111,11 +95,8 @@ const updatejewel=(event)=>{
         .catch(error => console.error('Unable to update item.', error));
 
     closeInput();
-
     //  return false;
 }
-
-
 const closeInput=()=>{
     document.getElementById('editForm').style.display = 'none';
 }

@@ -1,5 +1,8 @@
 using project.interfaces;
 using project.Services;
+using project.Middlewares;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,7 @@ if (app.Environment.IsDevelopment())
    
 
 }
+app.UseErrorHandling();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseHttpsRedirection();
