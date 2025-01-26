@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using project.interfaces;
 using project.Models;
 using project.Services;
-using project.Exceptions;
 namespace project.Controllers;
 [ApiController]
 [Route("[controller]")]
@@ -25,7 +24,7 @@ this.ijewerlyService=ijewerlyService;
         Jewel jewel= ijewerlyService.Get(id);
        if(jewel==null) 
     {
-         throw new NotFoundIdException($"jewel with ID {id} not found."); 
+        return BadRequest("invalid id");
     }
        return jewel;
     }
@@ -42,11 +41,11 @@ this.ijewerlyService=ijewerlyService;
     public ActionResult Update(int id, Jewel newJewel)
     { 
         if (id != newJewel.Id)
-          throw new IdMismatchException("id mismatch");
+          return BadRequest("id mismatch");
          
       Jewel?  oldJewel = ijewerlyService.Get(id);
         if (oldJewel == null) 
-             throw new NotFoundIdException($"jewel with ID {id} not found."); 
+               return BadRequest("invalid id");
         
        ijewerlyService.Update(id, newJewel);
       return NoContent();
@@ -57,7 +56,7 @@ this.ijewerlyService=ijewerlyService;
     {
  Jewel? jewel= ijewerlyService.Get(id);
 if(jewel == null)
-  throw new NotFoundIdException($"jewel with ID {id} not found."); 
+ return BadRequest("invalid id");
  ijewerlyService.Delete(id);
  return NoContent();
 }

@@ -1,4 +1,4 @@
-using project.Exceptions;
+
 namespace project.Middlewares
 {
      public class errorHandling
@@ -17,18 +17,7 @@ namespace project.Middlewares
             // המשך ל-Middleware הבא בשרשרת
             await next(context);
         }
-        catch (NotFoundIdException ex) // טיפול בשגיאות מותאמות אישית
-        {
-        context.Response.StatusCode = 500;
-        context.Response.ContentType = "text/plain";
-        await  context.Response.WriteAsync(ex.Message);
-        }
-        catch (IdMismatchException ex) // טיפול בשגיאות כלליות
-        {
-           context.Response.StatusCode = 500;
-        context.Response.ContentType = "text/plain";
-        await  context.Response.WriteAsync(ex.Message);
-        }
+       
         catch (Exception ex){
             
            context.Response.StatusCode = 500;
@@ -39,7 +28,7 @@ namespace project.Middlewares
     }
     }
 
-    public   static  class MiddlewareExtensions
+    public   static partial  class MiddlewareExtensions
     {
         public static IApplicationBuilder UseErrorHandling(this IApplicationBuilder builder)
         {

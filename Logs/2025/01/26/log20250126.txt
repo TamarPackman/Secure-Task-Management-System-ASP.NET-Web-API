@@ -1,0 +1,4 @@
+2025-01-26 17:57:58.820 +02:00 [Information] Now listening on: "http://localhost:5059"
+2025-01-26 17:57:58.851 +02:00 [Information] Application started. Press Ctrl+C to shut down.
+2025-01-26 17:57:58.852 +02:00 [Information] Hosting environment: "Development"
+2025-01-26 17:57:58.852 +02:00 [Information] Content root path: "C:\Users\This User\Desktop\core\project"
