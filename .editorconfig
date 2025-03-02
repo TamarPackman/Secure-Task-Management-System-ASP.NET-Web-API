@@ -2,3 +2,6 @@
 
 # CA1848: Use the LoggerMessage delegates
 dotnet_diagnostic.CA1848.severity = warning
+
+# IDE0055: Fix formatting
+dotnet_diagnostic.IDE0055.severity = none

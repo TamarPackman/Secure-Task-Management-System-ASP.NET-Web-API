@@ -3,55 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jewelry crud</title>
-   <link rel="stylesheet" href="./css/site.css">
+    <title>Jewelry CRUD</title>
+    <link rel="stylesheet" href="./css/site.css">
 </head>
-<body>
-    <h1>jewelry crud</h1>
+<body> 
+    <h1>Jewelry CRUD</h1>
     <h3>Add</h3>
-    <form  onsubmit="addJewel(event)">
-        <input type="text" id="add-name" placeholder="name">
-        <input type="number" id="add-price" placeholder="price">
-        <select name="options" placeholder="category" id="add-category">
-            <option>category</option>
-            <option>ring</option>
-            <option >earrings</option>
-            <option >bracelet</option>
-            <option>necklace</option>
+    <form method="POST" onsubmit="addJewel(event)">
+        <input type="text" id="add-name" placeholder="Name">
+        <input type="number" id="add-price" placeholder="Price">
+
+        <select name="options" id="jewelry-select">
+            <option value="Ring">Ring</option>
+            <option value="Earrings">Earrings</option>
+            <option value="Necklace">Necklace</option>
+            <option value="Bracelet">Bracelet</option>
         </select>
+
         <input type="submit" value="Add">
     </form>
-    <table>
-        <tr>
-            <th>id</th>
-            <th>Name</th>
-            <th>price</th>
-            <th>category</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tbody id="jewelry"></tbody>
-    </table>
+    <br>
+    <br>
+
     <div id="editForm">
         <h3>Edit</h3>
-        <form  onsubmit="updatejewel(event)">
+        <form onsubmit="updateJewel(event)">
             <input type="hidden" id="edit-id">
-            <input type="text" id="edit-name" placeholder="name">
-            <input type="number" id="edit-price" placeholder="price">
-            <select name="options" placeholder="category" id="edit-category">
-                <option>category</option>
-                <option>ring</option>
-                <option >earrings</option>
-                <option >bracelet</option>
-                <option>necklace</option>
+            <input type="text" id="edit-name" placeholder="Name">
+            <input type="number" id="edit-price" placeholder="Price">
+            <select name="options" id="edit-jewelry-select">
+                <option value="Ring">Ring</option>
+                <option value="Earrings">Earrings</option>
+                <option value="Necklace">Necklace</option>
+                <option value="Bracelet">Bracelet</option>
             </select>
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
         </form>
     </div>
-    <script src="./js/site.js"></script> 
+    <br><br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="Jewelry-table"></tbody>
+    </table>
+    <script src="js/site.js"></script>
     <script type="text/javascript">
-        getJewelry();
+       getJewelry();
     </script>
 </body>
 

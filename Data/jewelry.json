@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 3,
+    "UserId": 0,
+    "Name": "\u05D8\u05D1\u05E2\u05EA \u05E0\u05D5\u05E6\u05E6\u05EA",
+    "Price": 50,
+    "Category": 0
+  },
+  {
+    "Id": 4,
+    "UserId": 2,
+    "Name": "string",
+    "Price": 0,
+    "Category": 0
+  }
+]

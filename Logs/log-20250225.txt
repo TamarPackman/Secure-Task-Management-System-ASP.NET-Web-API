@@ -1,0 +1,297 @@
+2025-02-25 16:38:20 [Information] Application is shutting down...
+2025-02-25 19:30:36 [Information] User profile is available. Using '"C:\Users\This User\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-25 19:30:36 [Information] Now listening on: "http://localhost:5062"
+2025-02-25 19:30:36 [Information] Application started. Press Ctrl+C to shut down.
+2025-02-25 19:30:36 [Information] Hosting environment: "Development"
+2025-02-25 19:30:36 [Information] Content root path: "C:\Users\This User\Desktop\core\project"
+2025-02-25 19:30:41 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2025-02-25 19:30:41 [Information] Incoming request: "GET" "/"
+2025-02-25 19:30:41 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"C:\Users\This User\Desktop\core\project\wwwroot\index.html"'
+2025-02-25 19:30:41 [Information] Response: 200 (Elapsed: 92ms)
+2025-02-25 19:30:41 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/index.html""" - 200 1995 "text/html" 155.1603ms
+2025-02-25 19:30:41 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/js/site.js""" - null null
+2025-02-25 19:30:41 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/css/site.css""" - null null
+2025-02-25 19:30:41 [Information] Incoming request: "GET" "/js/site.js"
+2025-02-25 19:30:41 [Information] Incoming request: "GET" "/css/site.css"
+2025-02-25 19:30:41 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\This User\Desktop\core\project\wwwroot\css\site.css"'
+2025-02-25 19:30:41 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\This User\Desktop\core\project\wwwroot\js\site.js"'
+2025-02-25 19:30:41 [Information] Response: 200 (Elapsed: 41ms)
+2025-02-25 19:30:41 [Information] Response: 200 (Elapsed: 47ms)
+2025-02-25 19:30:41 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/css/site.css""" - 200 356 "text/css" 62.5375ms
+2025-02-25 19:30:41 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/js/site.js""" - 200 4121 "text/javascript" 74.501ms
+2025-02-25 19:30:41 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - null null
+2025-02-25 19:30:41 [Information] Incoming request: "GET" "/Jewelry"
+2025-02-25 19:30:41 [Warning] Failed to determine the https port for redirect.
+2025-02-25 19:30:41 [Information] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+2025-02-25 19:30:41 [Information] AuthenticationScheme: "Bearer" was challenged.
+2025-02-25 19:30:41 [Information] Response: 401 (Elapsed: 108ms)
+2025-02-25 19:30:41 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - 401 0 null 124.7791ms
+2025-02-25 19:30:45 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger""" - null null
+2025-02-25 19:30:45 [Information] Incoming request: "GET" "/swagger"
+2025-02-25 19:30:45 [Information] Response: 301 (Elapsed: 18ms)
+2025-02-25 19:30:45 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger""" - 301 0 null 36.4149ms
+2025-02-25 19:30:45 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2025-02-25 19:30:45 [Information] Incoming request: "GET" "/swagger/index.html"
+2025-02-25 19:30:45 [Information] Response: 200 (Elapsed: 103ms)
+2025-02-25 19:30:45 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 116.4725ms
+2025-02-25 19:30:45 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - null null
+2025-02-25 19:30:45 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - null null
+2025-02-25 19:30:45 [Information] Incoming request: "GET" "/swagger/swagger-ui-standalone-preset.js"
+2025-02-25 19:30:45 [Information] Incoming request: "GET" "/swagger/swagger-ui-bundle.js"
+2025-02-25 19:30:45 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2025-02-25 19:30:45 [Information] Response: 200 (Elapsed: 48ms)
+2025-02-25 19:30:45 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - 200 312163 "text/javascript" 65.0281ms
+2025-02-25 19:30:45 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2025-02-25 19:30:45 [Information] Response: 200 (Elapsed: 63ms)
+2025-02-25 19:30:45 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - 200 1061536 "text/javascript" 91.0791ms
+2025-02-25 19:30:46 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2025-02-25 19:30:46 [Information] Incoming request: "GET" "/swagger/v1/swagger.json"
+2025-02-25 19:30:46 [Information] Response: 200 (Elapsed: 291ms)
+2025-02-25 19:30:46 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 307.1566ms
+2025-02-25 19:31:44 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - "application/json" 80
+2025-02-25 19:31:44 [Information] Incoming request: "POST" "/User/login"
+2025-02-25 19:31:44 [Information] Executing endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 19:31:44 [Information] Route matched with "{action = \"Login\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Login(Project.Models.User)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 19:31:44 [Information] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-02-25 19:31:44 [Information] Executed action "Project.Controllers.UserController.Login (Project)" in 334.1492ms
+2025-02-25 19:31:44 [Information] Executed endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 19:31:44 [Information] Response: 200 (Elapsed: 511ms)
+2025-02-25 19:31:44 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - 200 null "application/json; charset=utf-8" 536.0478ms
+2025-02-25 19:32:03 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - null null
+2025-02-25 19:32:03 [Information] Incoming request: "GET" "/Jewelry"
+2025-02-25 19:32:04 [Information] Successfully validated the token.
+2025-02-25 19:32:04 [Information] Executing endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:32:04 [Information] Route matched with "{action = \"Get\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Project.Models.Jewel]] Get()" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:32:04 [Information] Executed action "Project.Controllers.JewelryController.Get (Project)" in 53.4495ms
+2025-02-25 19:32:04 [Information] Executed endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:32:04 [Information] Response: 500 (Elapsed: 304ms)
+2025-02-25 19:32:04 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - 500 null "text/plain" 316.959ms
+2025-02-25 19:33:01 [Information] Application is shutting down...
+2025-02-25 19:33:06 [Information] User profile is available. Using '"C:\Users\This User\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-25 19:33:06 [Information] Now listening on: "http://localhost:5062"
+2025-02-25 19:33:06 [Information] Application started. Press Ctrl+C to shut down.
+2025-02-25 19:33:06 [Information] Hosting environment: "Development"
+2025-02-25 19:33:06 [Information] Content root path: "C:\Users\This User\Desktop\core\project"
+2025-02-25 19:33:10 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2025-02-25 19:33:10 [Information] Incoming request: "GET" "/swagger/index.html"
+2025-02-25 19:33:10 [Information] Response: 200 (Elapsed: 158ms)
+2025-02-25 19:33:10 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 203.2341ms
+2025-02-25 19:33:10 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2025-02-25 19:33:10 [Information] Incoming request: "GET" "/swagger/v1/swagger.json"
+2025-02-25 19:33:11 [Information] Response: 200 (Elapsed: 202ms)
+2025-02-25 19:33:11 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 221.3803ms
+2025-02-25 19:33:52 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - "application/json" 80
+2025-02-25 19:33:52 [Information] Incoming request: "POST" "/User/login"
+2025-02-25 19:33:52 [Warning] Failed to determine the https port for redirect.
+2025-02-25 19:33:52 [Information] Executing endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 19:33:52 [Information] Route matched with "{action = \"Login\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Login(Project.Models.User)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 19:33:52 [Information] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-02-25 19:33:52 [Information] Executed action "Project.Controllers.UserController.Login (Project)" in 316.2488ms
+2025-02-25 19:33:52 [Information] Executed endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 19:33:52 [Information] Response: 200 (Elapsed: 523ms)
+2025-02-25 19:33:52 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - 200 null "application/json; charset=utf-8" 540.1696ms
+2025-02-25 19:34:16 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - null null
+2025-02-25 19:34:16 [Information] Incoming request: "GET" "/Jewelry"
+2025-02-25 19:34:16 [Information] Successfully validated the token.
+2025-02-25 19:34:16 [Information] Executing endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:34:16 [Information] Route matched with "{action = \"Get\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Project.Models.Jewel]] Get()" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:34:16 [Information] Executing "ObjectResult", writing value of type '"System.Collections.Generic.List`1[[Project.Models.Jewel, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2025-02-25 19:34:16 [Information] Executed action "Project.Controllers.JewelryController.Get (Project)" in 89.3086ms
+2025-02-25 19:34:16 [Information] Executed endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:34:16 [Information] Response: 200 (Elapsed: 270ms)
+2025-02-25 19:34:16 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - 200 null "application/json; charset=utf-8" 283.3979ms
+2025-02-25 19:35:02 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry/1""" - null null
+2025-02-25 19:35:02 [Information] Incoming request: "GET" "/Jewelry/1"
+2025-02-25 19:35:02 [Information] Successfully validated the token.
+2025-02-25 19:35:02 [Information] Executing endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:35:02 [Information] Route matched with "{action = \"Get\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[Project.Models.Jewel] Get(Int32)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:35:02 [Information] Executing "ObjectResult", writing value of type '"Project.Models.Jewel"'.
+2025-02-25 19:35:02 [Information] Executed action "Project.Controllers.JewelryController.Get (Project)" in 6.975ms
+2025-02-25 19:35:02 [Information] Executed endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:35:02 [Information] Response: 200 (Elapsed: 42ms)
+2025-02-25 19:35:02 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry/1""" - 200 null "application/json; charset=utf-8" 50.2672ms
+2025-02-25 19:35:07 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry/2""" - null null
+2025-02-25 19:35:07 [Information] Incoming request: "GET" "/Jewelry/2"
+2025-02-25 19:35:07 [Information] Successfully validated the token.
+2025-02-25 19:35:07 [Information] Executing endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:35:07 [Information] Route matched with "{action = \"Get\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[Project.Models.Jewel] Get(Int32)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:35:07 [Information] Executing "ObjectResult", writing value of type '"Project.Models.Jewel"'.
+2025-02-25 19:35:07 [Information] Executed action "Project.Controllers.JewelryController.Get (Project)" in 7.5264ms
+2025-02-25 19:35:07 [Information] Executed endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:35:07 [Information] Response: 200 (Elapsed: 36ms)
+2025-02-25 19:35:07 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry/2""" - 200 null "application/json; charset=utf-8" 47.1144ms
+2025-02-25 19:35:12 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry/0""" - null null
+2025-02-25 19:35:12 [Information] Incoming request: "GET" "/Jewelry/0"
+2025-02-25 19:35:12 [Information] Successfully validated the token.
+2025-02-25 19:35:12 [Information] Executing endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:35:12 [Information] Route matched with "{action = \"Get\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[Project.Models.Jewel] Get(Int32)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:35:12 [Information] Executing "BadRequestObjectResult", writing value of type '"System.String"'.
+2025-02-25 19:35:12 [Information] Executed action "Project.Controllers.JewelryController.Get (Project)" in 15.7477ms
+2025-02-25 19:35:12 [Information] Executed endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 19:35:12 [Information] Response: 400 (Elapsed: 61ms)
+2025-02-25 19:35:12 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry/0""" - 400 null "text/plain; charset=utf-8" 79.9835ms
+2025-02-25 19:35:44 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/Jewelry""" - "application/json" 93
+2025-02-25 19:35:44 [Information] Incoming request: "POST" "/Jewelry"
+2025-02-25 19:35:44 [Information] Successfully validated the token.
+2025-02-25 19:35:44 [Information] Executing endpoint '"Project.Controllers.JewelryController.Create (Project)"'
+2025-02-25 19:35:44 [Information] Route matched with "{action = \"Create\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Create(Project.Models.Jewel)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:35:44 [Information] Executing "CreatedAtActionResult", writing value of type '"Project.Models.Jewel"'.
+2025-02-25 19:35:44 [Information] Executed action "Project.Controllers.JewelryController.Create (Project)" in 91.9124ms
+2025-02-25 19:35:44 [Information] Executed endpoint '"Project.Controllers.JewelryController.Create (Project)"'
+2025-02-25 19:35:44 [Information] Response: 201 (Elapsed: 139ms)
+2025-02-25 19:35:44 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/Jewelry""" - 201 null "application/json; charset=utf-8" 157.4242ms
+2025-02-25 19:41:14 [Information] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5062""""/Jewelry/1""" - "application/json" 83
+2025-02-25 19:41:14 [Information] Incoming request: "PUT" "/Jewelry/1"
+2025-02-25 19:41:14 [Information] Successfully validated the token.
+2025-02-25 19:41:14 [Information] Executing endpoint '"Project.Controllers.JewelryController.Update (Project)"'
+2025-02-25 19:41:14 [Information] Route matched with "{action = \"Update\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Update(Int32, Project.Models.Jewel)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:41:14 [Information] Executing "BadRequestObjectResult", writing value of type '"System.String"'.
+2025-02-25 19:41:14 [Information] Executed action "Project.Controllers.JewelryController.Update (Project)" in 10.9972ms
+2025-02-25 19:41:14 [Information] Executed endpoint '"Project.Controllers.JewelryController.Update (Project)"'
+2025-02-25 19:41:14 [Information] Response: 400 (Elapsed: 56ms)
+2025-02-25 19:41:14 [Information] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5062""""/Jewelry/1""" - 400 null "text/plain; charset=utf-8" 66.2187ms
+2025-02-25 19:41:33 [Information] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5062""""/Jewelry/1""" - "application/json" 83
+2025-02-25 19:41:33 [Information] Incoming request: "PUT" "/Jewelry/1"
+2025-02-25 19:41:33 [Information] Successfully validated the token.
+2025-02-25 19:41:33 [Information] Executing endpoint '"Project.Controllers.JewelryController.Update (Project)"'
+2025-02-25 19:41:33 [Information] Route matched with "{action = \"Update\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Update(Int32, Project.Models.Jewel)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:41:33 [Information] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-25 19:41:33 [Information] Executed action "Project.Controllers.JewelryController.Update (Project)" in 24.4212ms
+2025-02-25 19:41:33 [Information] Executed endpoint '"Project.Controllers.JewelryController.Update (Project)"'
+2025-02-25 19:41:33 [Information] Response: 204 (Elapsed: 64ms)
+2025-02-25 19:41:33 [Information] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5062""""/Jewelry/1""" - 204 null null 81.3918ms
+2025-02-25 19:42:02 [Information] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/Jewelry/1""" - null null
+2025-02-25 19:42:02 [Information] Incoming request: "DELETE" "/Jewelry/1"
+2025-02-25 19:42:02 [Information] Successfully validated the token.
+2025-02-25 19:42:02 [Information] Executing endpoint '"Project.Controllers.JewelryController.Delete (Project)"'
+2025-02-25 19:42:02 [Information] Route matched with "{action = \"Delete\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Delete(Int32)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:42:02 [Information] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-25 19:42:02 [Information] Executed action "Project.Controllers.JewelryController.Delete (Project)" in 15.1586ms
+2025-02-25 19:42:02 [Information] Executed endpoint '"Project.Controllers.JewelryController.Delete (Project)"'
+2025-02-25 19:42:02 [Information] Response: 204 (Elapsed: 74ms)
+2025-02-25 19:42:02 [Information] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/Jewelry/1""" - 204 null null 87.0805ms
+2025-02-25 19:42:08 [Information] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/Jewelry/0""" - null null
+2025-02-25 19:42:08 [Information] Incoming request: "DELETE" "/Jewelry/0"
+2025-02-25 19:42:08 [Information] Successfully validated the token.
+2025-02-25 19:42:08 [Information] Executing endpoint '"Project.Controllers.JewelryController.Delete (Project)"'
+2025-02-25 19:42:08 [Information] Route matched with "{action = \"Delete\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Delete(Int32)" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 19:42:08 [Information] Executing "BadRequestObjectResult", writing value of type '"System.String"'.
+2025-02-25 19:42:08 [Information] Executed action "Project.Controllers.JewelryController.Delete (Project)" in 10.1337ms
+2025-02-25 19:42:08 [Information] Executed endpoint '"Project.Controllers.JewelryController.Delete (Project)"'
+2025-02-25 19:42:08 [Information] Response: 400 (Elapsed: 59ms)
+2025-02-25 19:42:08 [Information] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/Jewelry/0""" - 400 null "text/plain; charset=utf-8" 79.8142ms
+2025-02-25 21:10:50 [Information] Application is shutting down...
+2025-02-25 21:10:56 [Information] User profile is available. Using '"C:\Users\This User\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-25 21:10:56 [Information] Now listening on: "http://localhost:5062"
+2025-02-25 21:10:56 [Information] Application started. Press Ctrl+C to shut down.
+2025-02-25 21:10:56 [Information] Hosting environment: "Development"
+2025-02-25 21:10:56 [Information] Content root path: "C:\Users\This User\Desktop\core\project"
+2025-02-25 21:11:00 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2025-02-25 21:11:00 [Information] Incoming request: "GET" "/swagger/index.html"
+2025-02-25 21:11:00 [Information] Response: 200 (Elapsed: 59ms)
+2025-02-25 21:11:00 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 75.4824ms
+2025-02-25 21:11:00 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - null null
+2025-02-25 21:11:00 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - null null
+2025-02-25 21:11:00 [Information] Incoming request: "GET" "/swagger/swagger-ui-bundle.js"
+2025-02-25 21:11:00 [Information] Incoming request: "GET" "/swagger/swagger-ui-standalone-preset.js"
+2025-02-25 21:11:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2025-02-25 21:11:00 [Information] Response: 200 (Elapsed: 29ms)
+2025-02-25 21:11:00 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - 200 312163 "text/javascript" 36.6807ms
+2025-02-25 21:11:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2025-02-25 21:11:00 [Information] Response: 200 (Elapsed: 50ms)
+2025-02-25 21:11:00 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - 200 1061536 "text/javascript" 58.7336ms
+2025-02-25 21:11:01 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2025-02-25 21:11:01 [Information] Incoming request: "GET" "/swagger/v1/swagger.json"
+2025-02-25 21:11:01 [Information] Response: 200 (Elapsed: 75ms)
+2025-02-25 21:11:01 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 79.1409ms
+2025-02-25 21:12:20 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - "application/json" 78
+2025-02-25 21:12:20 [Information] Incoming request: "POST" "/User/login"
+2025-02-25 21:12:20 [Warning] Failed to determine the https port for redirect.
+2025-02-25 21:12:20 [Information] Executing endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 21:12:20 [Information] Route matched with "{action = \"Login\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Login(Project.Models.User)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:12:20 [Information] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-02-25 21:12:20 [Information] Executed action "Project.Controllers.UserController.Login (Project)" in 174.6547ms
+2025-02-25 21:12:20 [Information] Executed endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 21:12:20 [Information] Response: 200 (Elapsed: 302ms)
+2025-02-25 21:12:20 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - 200 null "application/json; charset=utf-8" 308.6335ms
+2025-02-25 21:12:38 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - null null
+2025-02-25 21:12:38 [Information] Incoming request: "GET" "/Jewelry"
+2025-02-25 21:12:38 [Information] Successfully validated the token.
+2025-02-25 21:12:38 [Information] Executing endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 21:12:38 [Information] Route matched with "{action = \"Get\", controller = \"Jewelry\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Project.Models.Jewel]] Get()" on controller "Project.Controllers.JewelryController" ("Project").
+2025-02-25 21:12:38 [Information] Executing "ObjectResult", writing value of type '"System.Collections.Generic.List`1[[Project.Models.Jewel, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2025-02-25 21:12:38 [Information] Executed action "Project.Controllers.JewelryController.Get (Project)" in 42.0069ms
+2025-02-25 21:12:38 [Information] Executed endpoint '"Project.Controllers.JewelryController.Get (Project)"'
+2025-02-25 21:12:38 [Information] Response: 200 (Elapsed: 123ms)
+2025-02-25 21:12:38 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - 200 null "application/json; charset=utf-8" 132.1158ms
+2025-02-25 21:12:49 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/User""" - null null
+2025-02-25 21:12:49 [Information] Incoming request: "GET" "/User"
+2025-02-25 21:12:49 [Information] Successfully validated the token.
+2025-02-25 21:12:49 [Information] Executing endpoint '"Project.Controllers.UserController.Get (Project)"'
+2025-02-25 21:12:49 [Information] Route matched with "{action = \"Get\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Project.Models.User]] Get()" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:12:49 [Information] Executing "ObjectResult", writing value of type '"System.Collections.Generic.List`1[[Project.Models.User, Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2025-02-25 21:12:49 [Information] Executed action "Project.Controllers.UserController.Get (Project)" in 8.0745ms
+2025-02-25 21:12:49 [Information] Executed endpoint '"Project.Controllers.UserController.Get (Project)"'
+2025-02-25 21:12:49 [Information] Response: 200 (Elapsed: 44ms)
+2025-02-25 21:12:49 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/User""" - 200 null "application/json; charset=utf-8" 50.1124ms
+2025-02-25 21:13:15 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/User/3""" - null null
+2025-02-25 21:13:15 [Information] Incoming request: "GET" "/User/3"
+2025-02-25 21:13:15 [Information] Successfully validated the token.
+2025-02-25 21:13:15 [Information] Executing endpoint '"Project.Controllers.UserController.Get (Project)"'
+2025-02-25 21:13:15 [Information] Route matched with "{action = \"Get\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[Project.Models.User] Get(Int32)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:13:15 [Information] Executing "ObjectResult", writing value of type '"Project.Models.User"'.
+2025-02-25 21:13:15 [Information] Executed action "Project.Controllers.UserController.Get (Project)" in 8.6448ms
+2025-02-25 21:13:15 [Information] Executed endpoint '"Project.Controllers.UserController.Get (Project)"'
+2025-02-25 21:13:15 [Information] Response: 200 (Elapsed: 31ms)
+2025-02-25 21:13:15 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/User/3""" - 200 null "application/json; charset=utf-8" 39.46ms
+2025-02-25 21:13:20 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/User/0""" - null null
+2025-02-25 21:13:20 [Information] Incoming request: "GET" "/User/0"
+2025-02-25 21:13:20 [Information] Successfully validated the token.
+2025-02-25 21:13:20 [Information] Executing endpoint '"Project.Controllers.UserController.Get (Project)"'
+2025-02-25 21:13:20 [Information] Route matched with "{action = \"Get\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[Project.Models.User] Get(Int32)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:13:20 [Information] Executing "BadRequestObjectResult", writing value of type '"System.String"'.
+2025-02-25 21:13:20 [Information] Executed action "Project.Controllers.UserController.Get (Project)" in 1.6892ms
+2025-02-25 21:13:20 [Information] Executed endpoint '"Project.Controllers.UserController.Get (Project)"'
+2025-02-25 21:13:20 [Information] Response: 400 (Elapsed: 17ms)
+2025-02-25 21:13:20 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/User/0""" - 400 null "text/plain; charset=utf-8" 24.5269ms
+2025-02-25 21:13:44 [Information] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5062""""/User/1""" - "application/json" 74
+2025-02-25 21:13:44 [Information] Incoming request: "PUT" "/User/1"
+2025-02-25 21:13:44 [Information] Successfully validated the token.
+2025-02-25 21:13:44 [Information] Executing endpoint '"Project.Controllers.UserController.Update (Project)"'
+2025-02-25 21:13:44 [Information] Route matched with "{action = \"Update\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Update(Int32, Project.Models.User)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:13:44 [Information] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-25 21:13:44 [Information] Executed action "Project.Controllers.UserController.Update (Project)" in 27.0763ms
+2025-02-25 21:13:44 [Information] Executed endpoint '"Project.Controllers.UserController.Update (Project)"'
+2025-02-25 21:13:44 [Information] Response: 204 (Elapsed: 49ms)
+2025-02-25 21:13:45 [Information] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5062""""/User/1""" - 204 null null 60.0513ms
+2025-02-25 21:13:54 [Information] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/User/1""" - null null
+2025-02-25 21:13:54 [Information] Incoming request: "DELETE" "/User/1"
+2025-02-25 21:13:54 [Information] Successfully validated the token.
+2025-02-25 21:13:54 [Information] Executing endpoint '"Project.Controllers.UserController.Delete (Project)"'
+2025-02-25 21:13:54 [Information] Route matched with "{action = \"Delete\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Delete(Int32)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:13:54 [Information] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-25 21:13:54 [Information] Executed action "Project.Controllers.UserController.Delete (Project)" in 5.8099ms
+2025-02-25 21:13:54 [Information] Executed endpoint '"Project.Controllers.UserController.Delete (Project)"'
+2025-02-25 21:13:54 [Information] Response: 204 (Elapsed: 29ms)
+2025-02-25 21:13:54 [Information] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5062""""/User/1""" - 204 null null 45.7816ms
+2025-02-25 21:14:42 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/User""" - "application/json" 70
+2025-02-25 21:14:42 [Information] Incoming request: "POST" "/User"
+2025-02-25 21:14:42 [Information] Successfully validated the token.
+2025-02-25 21:14:42 [Information] Executing endpoint '"Project.Controllers.UserController.Create (Project)"'
+2025-02-25 21:14:42 [Information] Route matched with "{action = \"Create\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Create(Project.Models.User)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:14:42 [Information] Executing "CreatedAtActionResult", writing value of type '"Project.Models.User"'.
+2025-02-25 21:14:42 [Information] Executed action "Project.Controllers.UserController.Create (Project)" in 17.4249ms
+2025-02-25 21:14:42 [Information] Executed endpoint '"Project.Controllers.UserController.Create (Project)"'
+2025-02-25 21:14:42 [Information] Response: 201 (Elapsed: 32ms)
+2025-02-25 21:14:42 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/User""" - 201 null "application/json; charset=utf-8" 37.2834ms
+2025-02-25 21:15:21 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - "application/json" 71
+2025-02-25 21:15:21 [Information] Incoming request: "POST" "/User/login"
+2025-02-25 21:15:21 [Information] Successfully validated the token.
+2025-02-25 21:15:21 [Information] Executing endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 21:15:21 [Information] Route matched with "{action = \"Login\", controller = \"User\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Login(Project.Models.User)" on controller "Project.Controllers.UserController" ("Project").
+2025-02-25 21:15:21 [Information] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-02-25 21:15:21 [Information] Executed action "Project.Controllers.UserController.Login (Project)" in 2.4098ms
+2025-02-25 21:15:21 [Information] Executed endpoint '"Project.Controllers.UserController.Login (Project)"'
+2025-02-25 21:15:21 [Information] Response: 200 (Elapsed: 8ms)
+2025-02-25 21:15:21 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/User/login""" - 200 null "application/json; charset=utf-8" 11.7098ms

@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 2,
+    "Name": "Tami",
+    "Password": "T\u0026a913114!",
+    "Type": "Admin"
+  },
+  {
+    "Id": 3,
+    "Name": "tami",
+    "Password": "123",
+    "Type": "User"
+  },
+  {
+    "Id": 4,
+    "Name": "yael",
+    "Password": "456",
+    "Type": "User"
+  }
+]

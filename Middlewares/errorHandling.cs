@@ -1,40 +1,33 @@
 
-namespace project.Middlewares
+namespace Project.Middlewares;
+public class ErrorHandlingMiddleware
 {
-     public class errorHandling
-    {
-        private   RequestDelegate  next;
- 
-        public errorHandling(RequestDelegate next)
-        {
-            this.next = next;
-        }
+    private readonly RequestDelegate next;
 
-        public async Task InvokeAsync(HttpContext context)
+    public ErrorHandlingMiddleware(RequestDelegate _next)
+    {
+        next = _next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
     {
         try
         {
-            // המשך ל-Middleware הבא בשרשרת
-            await next(context);
+            await next(context); // מעביר את הבקשה הלאה בצינור
         }
-       
-        catch (Exception ex){
-            
-           context.Response.StatusCode = 500;
-        context.Response.ContentType = "text/plain";
-        await  context.Response.WriteAsync(ex.Message);
-
-        }
-    }
-    }
-
-    public   static partial  class MiddlewareExtensions
-    {
-        public static IApplicationBuilder UseErrorHandling(this IApplicationBuilder builder)
+        catch (Exception ex)
         {
-            return builder.UseMiddleware<errorHandling>();
+            context.Response.StatusCode = 500;
+            context.Response.ContentType = "text/plain";
+            await context.Response.WriteAsync(ex.Message);   // מטפל בשגיאה
         }
     }
+}
 
-
+public static partial class MiddlewareExtensions
+{
+    public static IApplicationBuilder UseErrorHandlingMiddleware(this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<ErrorHandlingMiddleware>();
+    }
 }

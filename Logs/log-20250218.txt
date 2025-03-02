@@ -1,0 +1,98 @@
+2025-02-18 16:58:22 [Information] User profile is available. Using '"C:\Users\This User\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-18 16:58:22 [Information] Now listening on: "http://localhost:5062"
+2025-02-18 16:58:22 [Information] Application started. Press Ctrl+C to shut down.
+2025-02-18 16:58:22 [Information] Hosting environment: "Development"
+2025-02-18 16:58:22 [Information] Content root path: "C:\Users\This User\Desktop\CoreProject"
+2025-02-18 16:58:35 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/""" - null null
+2025-02-18 16:58:35 [Information] Incoming request: "GET" "/"
+2025-02-18 16:58:35 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"C:\Users\This User\Desktop\CoreProject\wwwroot\index.html"'
+2025-02-18 16:58:35 [Information] Response: 200 (Elapsed: 60ms)
+2025-02-18 16:58:35 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/index.html""" - 200 1995 "text/html" 114.4028ms
+2025-02-18 16:58:35 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/js/site.js""" - null null
+2025-02-18 16:58:35 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/css/site.css""" - null null
+2025-02-18 16:58:35 [Information] Incoming request: "GET" "/js/site.js"
+2025-02-18 16:58:35 [Information] Incoming request: "GET" "/css/site.css"
+2025-02-18 16:58:35 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\This User\Desktop\CoreProject\wwwroot\js\site.js"'
+2025-02-18 16:58:35 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\This User\Desktop\CoreProject\wwwroot\css\site.css"'
+2025-02-18 16:58:35 [Information] Response: 200 (Elapsed: 43ms)
+2025-02-18 16:58:35 [Information] Response: 200 (Elapsed: 39ms)
+2025-02-18 16:58:35 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/js/site.js""" - 200 4121 "text/javascript" 90.1783ms
+2025-02-18 16:58:35 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/css/site.css""" - 200 356 "text/css" 81.2803ms
+2025-02-18 16:58:35 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - null null
+2025-02-18 16:58:35 [Information] Incoming request: "GET" "/Jewelry"
+2025-02-18 16:58:35 [Warning] Failed to determine the https port for redirect.
+2025-02-18 16:58:35 [Information] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+2025-02-18 16:58:35 [Information] AuthenticationScheme: "Bearer" was challenged.
+2025-02-18 16:58:35 [Information] Response: 401 (Elapsed: 103ms)
+2025-02-18 16:58:35 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/Jewelry""" - 401 0 null 129.0552ms
+2025-02-18 16:58:35 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/favicon.ico""" - null null
+2025-02-18 16:58:35 [Information] Incoming request: "GET" "/favicon.ico"
+2025-02-18 16:58:35 [Information] Response: 404 (Elapsed: 10ms)
+2025-02-18 16:58:35 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/favicon.ico""" - 404 0 null 25.4677ms
+2025-02-18 16:58:36 [Information] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/favicon.ico", Response status code: 404
+2025-02-18 16:58:44 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/Jewelry""" - "application/json" 45
+2025-02-18 16:58:44 [Information] Incoming request: "POST" "/Jewelry"
+2025-02-18 16:58:44 [Information] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+2025-02-18 16:58:44 [Information] AuthenticationScheme: "Bearer" was challenged.
+2025-02-18 16:58:44 [Information] Response: 401 (Elapsed: 39ms)
+2025-02-18 16:58:44 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/Jewelry""" - 401 0 null 57.9898ms
+2025-02-18 16:58:46 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:5062""""/Jewelry""" - "application/json" 45
+2025-02-18 16:58:46 [Information] Incoming request: "POST" "/Jewelry"
+2025-02-18 16:58:46 [Information] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user."
+2025-02-18 16:58:46 [Information] AuthenticationScheme: "Bearer" was challenged.
+2025-02-18 16:58:46 [Information] Response: 401 (Elapsed: 26ms)
+2025-02-18 16:58:46 [Information] Request finished "HTTP/1.1" "POST" "http"://"localhost:5062""""/Jewelry""" - 401 0 null 40.705ms
+2025-02-18 16:58:57 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger""" - null null
+2025-02-18 16:58:57 [Information] Incoming request: "GET" "/swagger"
+2025-02-18 16:58:57 [Information] Response: 301 (Elapsed: 23ms)
+2025-02-18 16:58:57 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger""" - 301 0 null 37.7874ms
+2025-02-18 16:58:57 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2025-02-18 16:58:57 [Information] Incoming request: "GET" "/swagger/index.html"
+2025-02-18 16:58:58 [Information] Response: 200 (Elapsed: 259ms)
+2025-02-18 16:58:58 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 279.0653ms
+2025-02-18 16:58:58 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - null null
+2025-02-18 16:58:58 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui.css""" - null null
+2025-02-18 16:58:58 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - null null
+2025-02-18 16:58:58 [Information] Incoming request: "GET" "/swagger/swagger-ui-bundle.js"
+2025-02-18 16:58:58 [Information] Incoming request: "GET" "/swagger/swagger-ui.css"
+2025-02-18 16:58:58 [Information] Incoming request: "GET" "/swagger/swagger-ui-standalone-preset.js"
+2025-02-18 16:58:58 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2025-02-18 16:58:58 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2025-02-18 16:58:58 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2025-02-18 16:58:58 [Information] Response: 200 (Elapsed: 89ms)
+2025-02-18 16:58:58 [Information] Response: 200 (Elapsed: 80ms)
+2025-02-18 16:58:58 [Information] Response: 200 (Elapsed: 111ms)
+2025-02-18 16:58:58 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui.css""" - 200 144929 "text/css" 130.2772ms
+2025-02-18 16:58:58 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-standalone-preset.js""" - 200 312163 "text/javascript" 132.6343ms
+2025-02-18 16:58:58 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/swagger-ui-bundle.js""" - 200 1061536 "text/javascript" 136.34ms
+2025-02-18 16:58:58 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2025-02-18 16:58:58 [Information] Incoming request: "GET" "/swagger/v1/swagger.json"
+2025-02-18 16:58:58 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/favicon-32x32.png""" - null null
+2025-02-18 16:58:58 [Information] Incoming request: "GET" "/swagger/favicon-32x32.png"
+2025-02-18 16:58:58 [Information] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+2025-02-18 16:58:58 [Information] Response: 200 (Elapsed: 12ms)
+2025-02-18 16:58:58 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/favicon-32x32.png""" - 200 628 "image/png" 30.6493ms
+2025-02-18 16:58:58 [Information] Response: 200 (Elapsed: 352ms)
+2025-02-18 16:58:58 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 366.4557ms
+2025-02-18 17:39:43 [Information] User profile is available. Using '"C:\Users\This User\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-18 17:39:43 [Information] Now listening on: "http://localhost:5062"
+2025-02-18 17:39:43 [Information] Application started. Press Ctrl+C to shut down.
+2025-02-18 17:39:43 [Information] Hosting environment: "Development"
+2025-02-18 17:39:43 [Information] Content root path: "C:\Users\This User\Desktop\core\project"
+2025-02-18 17:39:57 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/jewerly""" - null null
+2025-02-18 17:39:57 [Information] Incoming request: "GET" "/jewerly"
+2025-02-18 17:39:57 [Warning] Failed to determine the https port for redirect.
+2025-02-18 17:39:57 [Information] Response: 404 (Elapsed: 69ms)
+2025-02-18 17:39:57 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/jewerly""" - 404 0 null 103.4121ms
+2025-02-18 17:39:57 [Information] Request reached the end of the middleware pipeline without being handled by application code. Request path: "GET" "http"://"localhost:5062""""/jewerly", Response status code: 404
+2025-02-18 17:40:02 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - null null
+2025-02-18 17:40:02 [Information] Incoming request: "GET" "/swagger/index.html"
+2025-02-18 17:40:02 [Information] Response: 200 (Elapsed: 289ms)
+2025-02-18 17:40:02 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 307.614ms
+2025-02-18 17:40:03 [Information] Request starting "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - null null
+2025-02-18 17:40:03 [Information] Incoming request: "GET" "/swagger/v1/swagger.json"
+2025-02-18 17:40:03 [Information] Response: 200 (Elapsed: 359ms)
+2025-02-18 17:40:03 [Information] Request finished "HTTP/1.1" "GET" "http"://"localhost:5062""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 376.3069ms
