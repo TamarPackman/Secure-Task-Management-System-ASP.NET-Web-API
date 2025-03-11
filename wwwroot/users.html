@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users CRUD</title>
+    <link rel="stylesheet" href="./css/site.css">
+</head>
+<body> 
+    <button id="logOut" onclick="logOut()">log out</button>
+    <h1>Users CRUD</h1>
+  
+
+    <form  id="add-form"hidden="false" method="POST" onsubmit="addUser(event)">
+        <input type="text" id="add-name" placeholder="Name">
+        <input type="password" id="add-password" placeholder="Password">
+        <select name="options" id="users-select">
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+        </select>
+        <input type="submit" value="Add">
+    </form>
+    <br>
+    <button id="Display-jewlery"  onclick="redirectToJewleryPage()">Display jewlery</button>
+    <br>
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form onsubmit="updateUser(event)">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name" placeholder="Name">
+            <input type="password" id="edit-password" placeholder="Password">
+            <select name="options" id="edit-users-select">
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
+            </select>
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+    <input type="number" id="idInput" placeholder="Enter ID">
+<button onclick="getUser()" id="getBtn">Get user</button>
+    <br><br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Type</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="users-table"></tbody>
+    </table>
+    <script src="js/site.js"></script>
+    <script src="js/users.js"></script>
+    <script type="text/javascript">
+      getUsers();
+    </script>
+</body>
+</html>

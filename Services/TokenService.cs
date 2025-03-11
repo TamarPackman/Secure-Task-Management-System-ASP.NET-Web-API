@@ -9,8 +9,6 @@ namespace Project.Services;
 
 public class TokenService:ITokenService
 {
-   
-    
     private  SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
     private  string issuer = "https://jewelry-demo.com";
     public  SecurityToken GetToken(List<Claim> claims) =>

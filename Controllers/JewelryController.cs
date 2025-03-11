@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Project.interfaces;
 using Project.Models;
 using IAuthorizationService = Project.interfaces.IAuthorizationService;
+
 namespace Project.Controllers;
 [ApiController]
 [Route("[controller]")]
@@ -10,19 +11,21 @@ namespace Project.Controllers;
 public class JewelryController : ControllerBase
 {
     private IJewelService iJewelService;
+    private IUserService iUserService;
     private IAuthorizationService iAuthorizationService;
-    public JewelryController(IJewelService iJewelService, IAuthorizationService iAuthorizationService)
+    public JewelryController(IJewelService iJewelService, IAuthorizationService iAuthorizationService,IUserService iUserService)
     {
         this.iJewelService = iJewelService;
         this.iAuthorizationService = iAuthorizationService;
+        this.iUserService = iUserService;
     }
     //פונקציה לקבלת רשימת הנתונים
-  
+
     [HttpGet]
-    public ActionResult<List<Jewel>> Get() 
-    { 
-        (string type,int userId)=iAuthorizationService.GetUserClaims(User);
-     return iJewelService.GetAllList(type,userId);
+    public ActionResult<List<Jewel>> Get()
+    {
+        (string type, int userId) = iAuthorizationService.GetUserClaims(User);
+        return iJewelService.GetAllList(type, userId);
     }
 
     //id-פונקציה לקבלת אוביקט לפי 
@@ -32,52 +35,55 @@ public class JewelryController : ControllerBase
         //  (string type,int userId)=iAuthorizationService.GetUserClaims(User);
         //   if(iAuthorizationService.IsAccessDenied(id,type,userId))
         // return Unauthorized();
-         (string type,int userId)=iAuthorizationService.GetUserClaims(User);
+        (string type, int userId) = iAuthorizationService.GetUserClaims(User);
         Jewel? jewel = iJewelService.GetJewelById(id);
         if (jewel == null)
-            return BadRequest("Invalid id"); 
-          if(iAuthorizationService.IsAccessDenied(jewel.UserId,type,userId))
-              return Unauthorized();
+            return BadRequest("Invalid id");
+        if (iAuthorizationService.IsAccessDenied(jewel.UserId, type, userId))
+            return Unauthorized("Unauthorized: You don't have permission to perform this action.");
         return jewel;
     }
     //מכניס אוביקט חדש לרשימה
     [HttpPost]
     public ActionResult Create(Jewel newJewel)
-    {    
-        (string type,int userId)=iAuthorizationService.GetUserClaims(User);
-         if(iAuthorizationService.IsAccessDenied(newJewel.UserId,type,userId))
-        return Unauthorized();
+    {
+      if(iUserService.GetAllList().FirstOrDefault(x => x.Id==newJewel.UserId)==null) 
+      return BadRequest("The specified user does not exist.");
+        (string type, int userId) = iAuthorizationService.GetUserClaims(User);
+        if (iAuthorizationService.IsAccessDenied(newJewel.UserId, type, userId))
+            return Unauthorized("Unauthorized: You don't have permission to perform this action.");
         iJewelService.Create(newJewel);
         return CreatedAtAction(nameof(Create), new { id = newJewel.Id }, newJewel);
-    }  
+    }
     //מעדכן אוביקט מהרשימה
     [HttpPut("{id}")]
     public ActionResult Update(int id, Jewel jewel)
-    {   (string type,int userId)=iAuthorizationService.GetUserClaims(User);
-       if (id != jewel.Id)
+    {
+        (string type, int userId) = iAuthorizationService.GetUserClaims(User);
+        if (id != jewel.Id)
             return BadRequest("id mismatch");
-         Jewel? oldJewel = iJewelService.GetJewelById(id);
+        Jewel? oldJewel = iJewelService.GetJewelById(id);
         if (oldJewel == null)
             return BadRequest("invalid id");
-            if(iAuthorizationService.IsAccessDenied(oldJewel.Id,type,userId))
-          return Unauthorized();
-      
-         iJewelService.Update( oldJewel,jewel);
-        return NoContent(); 
+        if (iAuthorizationService.IsAccessDenied(oldJewel.UserId, type, userId))
+            return Unauthorized("Unauthorized: You don't have permission to perform this action.");
+
+        iJewelService.Update(oldJewel, jewel);
+        return NoContent();
     }
-    
+
     //ID-פונקציה למחיקת אוביקט לפי 
     [HttpDelete("{id}")]
     public ActionResult Delete(int id)
     {
-       (string type,int userId)=iAuthorizationService.GetUserClaims(User);
-       Jewel? jewel = iJewelService.GetJewelById( id);
+        (string type, int userId) = iAuthorizationService.GetUserClaims(User);
+        Jewel? jewel = iJewelService.GetJewelById(id);
         if (jewel == null)
             return BadRequest("invalid id");
-             if(iAuthorizationService.IsAccessDenied(jewel.Id,type,userId))
-          return Unauthorized();
-         iJewelService.Delete(jewel);
-         return NoContent();
+        if (iAuthorizationService.IsAccessDenied(jewel.UserId, type, userId))
+            return Unauthorized("Unauthorized: You don't have permission to perform this action.");
+        iJewelService.Delete(jewel);
+        return NoContent();
     }
 
 }

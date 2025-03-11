@@ -13,7 +13,7 @@ namespace Project.interfaces
         void Create(User newUser);
 
         void Update(int id, User user);
-        void Delete(int id);
+        void Delete(int id,string type,int userId);
         User? GetExistUser(User user);
         string? Login (User? existUser);
 

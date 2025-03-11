@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <title>Login</title>
-    <style>
+    <!-- <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-image: '';
         }
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
+         
+            background-image: url('/img/background.jpg');
+            background-size: cover; /* כיסוי מלא של המסך */
+    background-position: center; /* מיקום התמונה במרכז */
+    background-repeat: no-repeat; /* שלא יחזור על עצמו */
+    height: 100vh; /* גובה כל הדף */
+    margin: 0; /* ביטול שוליים */
         }
 
         .login-container {
@@ -44,7 +53,7 @@
         .login-btn {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color:#f691a3;
             color: white;
             border: none;
             border-radius: 5px;
@@ -53,7 +62,7 @@
         }
 
         .login-btn:hover {
-            background-color: #0056b3;
+            background-color: #f691a3;
         }
 
         .error-message {
@@ -62,7 +71,7 @@
             display: none;
             margin-top: 10px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="login-container">
@@ -70,6 +79,7 @@
         <input type="text" id="username" placeholder="שם משתמש">
         <input type="password" id="password" placeholder="סיסמה">
         <button class="login-btn" onclick="login()">כניסה</button>
+        <button id="googleSignInButton">Sign in with Google</button>
         <p class="error-message" id="errorMessage">שם משתמש או סיסמה לא נכונים</p>
     </div>
     <script>
@@ -97,13 +107,34 @@
       }
       else throw new Error("unauthorize");
     }).then((result)=>{
+       
         localStorage.setItem("token",result); 
+        window.location.href = "index.html";
     })
     .catch((err)=>{
         console.log("error", err);
         alert(err);
     })  
         }
+
+        document.getElementById('googleSignInButton').addEventListener('click', function() {
+    gapi.auth2.getAuthInstance().signIn().then(function(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log(id_token);
+
+        // שליחת ה-ID Token ל-Backend שלך
+        fetch('/auth/google', {
+            method: 'POST',
+            body: JSON.stringify({ token: id_token }),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+    });
+});
     </script>
 </body>
 </html>

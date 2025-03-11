@@ -1,0 +1,295 @@
+/* site.css */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f7f1f2;
+    background-image: url('https://www.pandora.net/static/bg.jpg'); /* רקע עדין */
+    background-size: cover;
+    background-position: center;
+    color: #3d3d3d;
+    text-align: center;
+    margin: 0;/* עיצוב בהשראת Pandora */
+    body {
+        font-family: 'Playfair Display', serif;
+        background-color: #fdfcfa;
+        background-image: url('https://images.pandora.net/bg_image.jpg'); /* רקע עדין עם השראה */
+        background-size: cover;
+        background-position: center;
+        color: #4d4d4d;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #b39c82;
+        font-size: 42px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    button {
+        background-color: #e6d5c3;
+        color: #4d4d4d;
+        border: 1px solid #b39c82;
+        padding: 12px 18px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    
+    button:hover {
+        background-color: #d9c4b1;
+        transform: scale(1.05);
+    }
+    
+    form {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 12px;
+        display: inline-block;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+        border: 2px solid #e6d5c3;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    
+    input, select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 12px 0;
+        border: 1px solid #d3b8a4;
+        border-radius: 8px;
+        background-color: #f9f7f5;
+    }
+    
+    table {
+        width: 80%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    th, td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #b39c82;
+        color: white;
+        font-size: 18px;
+    }
+    
+    td {
+        color: #333;
+        font-size: 16px;
+    }
+    
+    a {
+        color: #b39c82;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* עיצוב תמונות */
+    .product-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid #b39c82;
+    }
+    
+    /* תוספת סטייל לסמלים של Pandora */
+    .logo {
+        width: 120px;
+        margin-bottom: 20px;
+    }
+    
+    padding: 20px;/* עיצוב אלגנטי בהשראת Pandora */
+    body {
+        font-family: 'Playfair Display', serif;
+        background-color: #F7F2F0; /* רקע ורוד עדין */
+        color: #4D4D4D; /* טקסט אפור כהה */
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #B76E79; /* צבע זהב רוז׳ */
+        font-size: 42px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    button {
+        background-color: #D6A4A4; /* ורוד זהב */
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s ease-in-out;
+        font-weight: bold;
+    }
+    
+    button:hover {
+        background-color: #B76E79; /* כהה יותר ב-Hover */
+        transform: scale(1.05);
+    }
+    
+    form {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        display: inline-block;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border: 2px solid #D6A4A4;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    
+    input, select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 12px 0;
+        border: 1px solid #E5C3C6;
+        border-radius: 8px;
+        background-color: #FDF9F8;
+    }
+    
+    table {
+        width: 80%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+        padding: 15px;
+        border-bottom: 1px solid #E5C3C6;
+    }
+    
+    th {
+        background-color: #D6A4A4;
+        color: white;
+        font-size: 18px;
+    }
+    
+    td {
+        color: #4D4D4D;
+        font-size: 16px;
+    }
+    
+    a {
+        color: #B76E79;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* תמונות */
+    .product-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 2px solid #D6A4A4;
+        object-fit: cover;
+    }
+    
+    /* לוגו */
+    .logo {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+    
+}
+
+h1 {
+    color: #a81c51;
+    font-size: 36px;
+}
+
+button {
+    background-color: #d88cae;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #b76b92;
+}
+
+form {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #a81c51;
+    color: white;
+}
+
+td {
+    color: #333;
+}
+
+a {
+    color: #a81c51;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

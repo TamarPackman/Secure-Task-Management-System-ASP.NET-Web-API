@@ -11,9 +11,10 @@ namespace Project.Services
     {
         private List<User> usersList { get; }
         private UpdateJson<User> updateJson;
-        private readonly ITokenService iTokenService;
+        private  readonly ITokenService iTokenService;
+        private readonly IJewelService iJewelService;
         //בנאי שנקרא בפעם הרשונה שהמחלקה נטענת + אתחול למערך
-        public UserService(ITokenService iTokenService)
+        public UserService(ITokenService iTokenService,IJewelService iJewelService)
         {
             string basePath = Directory.GetCurrentDirectory();
             string filePath = Path.Combine(basePath, "Data", "users.json");
@@ -21,11 +22,13 @@ namespace Project.Services
             usersList = updateJson.GetList();
             Console.WriteLine(usersList);
             this.iTokenService = iTokenService;
+            this.iJewelService=iJewelService;
         }
         ///CRUD///
         //פונקציה לקבלת רשימת הנתונים-GET
         public List<User> GetAllList()
         {
+           
             return usersList;
         }
         //id-פונקציה לקבלת אוביקט לפי 
@@ -39,6 +42,8 @@ namespace Project.Services
         {   
             int maxId = usersList.Any() ? usersList.Max(p => p.Id) : 0;
             newUser.Id = maxId + 1;
+            if(!(newUser.Type.Equals("User")||newUser.Type.Equals("Admin")))
+            newUser.Type="User";
             usersList.Add(newUser);
             updateJson.UpdateListInJson(usersList);
         }
@@ -54,11 +59,14 @@ namespace Project.Services
         }
 
         //ID-פונקציה למחיקת אוביקט לפי 
-        public void Delete(int id)
+        public void Delete(int id,string type,int userId)
         {
             int index = usersList.IndexOf(GetUserById(id));
             usersList.RemoveAt(index);
-            updateJson.UpdateListInJson(usersList);   
+            updateJson.UpdateListInJson(usersList);  
+          List<Jewel> userJewelryList= iJewelService.GetAllList(type,userId);
+          userJewelryList.ForEach(j => { if(j.UserId==id) iJewelService.Delete(j);} );
+
         }
         public User? GetExistUser(User user)
         {
@@ -69,7 +77,7 @@ public  string? Login (User existUser)
 {
     var claims = new List<Claim>();
 
-    if ((existUser.Name == "Tami" || existUser.Name == "Avital") && existUser.Password == "T&a913114!")
+    if (existUser.Type.Equals("Admin"))
     {
         claims.Add(new Claim("type", "Admin"));
     }

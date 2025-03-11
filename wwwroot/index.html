@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jewelry CRUD</title>
     <link rel="stylesheet" href="./css/site.css">
+    <!-- <link rel="stylesheet" href="./css/jewelry.css"> -->
 </head>
 <body> 
+    <button id="logOut" onclick="logOut()">log out</button>
     <h1>Jewelry CRUD</h1>
-    <h3>Add</h3>
     <form method="POST" onsubmit="addJewel(event)">
         <input type="text" id="add-name" placeholder="Name">
         <input type="number" id="add-price" placeholder="Price">
-
+        <input type="number" id="add-userId" placeholder="userId" hidden=true>
         <select name="options" id="jewelry-select">
             <option value="Ring">Ring</option>
             <option value="Earrings">Earrings</option>
             <option value="Necklace">Necklace</option>
             <option value="Bracelet">Bracelet</option>
         </select>
-
         <input type="submit" value="Add">
     </form>
     <br>
+    <button id="Display-users" hidden onclick="redirectToUsersPage()">Display users</button>
+    <button id="Display-user" hidden onclick="redirectToUsersPage()">Display user details</details></button>
     <br>
-
     <div id="editForm">
         <h3>Edit</h3>
         <form onsubmit="updateJewel(event)">
@@ -40,12 +41,16 @@
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
         </form>
+<!-- <pre id="result"></pre> -->
     </div>
+    <input type="number" id="idInput" placeholder="Enter ID">
+<button onclick="getJewel()" id="getBtn">Get jewel</button>
     <br><br>
     <table>
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>UserId</th>
             <th>Price</th>
             <th>Category</th>
             <th></th>
@@ -54,9 +59,9 @@
         <tbody id="Jewelry-table"></tbody>
     </table>
     <script src="js/site.js"></script>
+    <script src="js/Jewelry.js"></script>
     <script type="text/javascript">
-       getJewelry();
+      getJewelry();
     </script>
 </body>
-
 </html>

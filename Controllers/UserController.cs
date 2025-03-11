@@ -10,16 +10,22 @@ namespace Project.Controllers;
 [Authorize]
 public class UserController(IUserService iUserService, IAuthorizationService iAuthorizationService) : ControllerBase
 {
+    
       private IUserService iUserService = iUserService;
+      
        private IAuthorizationService iAuthorizationService=iAuthorizationService;
 
     //פונקציה לקבלת רשימת הנתונים
     [HttpGet]
-    [Authorize(Policy = "Admin")]
+    [Authorize (Policy="Admin")]
     public ActionResult<List<User>> Get()
     {
+        
+
      return iUserService.GetAllList();
     }
+     
+   
     //id-פונקציה לקבלת אוביקט לפי 
     [HttpGet("{id}")]
     [Authorize]
@@ -27,9 +33,7 @@ public class UserController(IUserService iUserService, IAuthorizationService iAu
     {
       (string type,int userId)=iAuthorizationService.GetUserClaims(User);
         if (iAuthorizationService.IsAccessDenied(id,type,userId))
-        {
-                return Unauthorized();
-        }
+                return Unauthorized("Unauthorized: You don't have permission to perform this action.");
         User? user = iUserService.GetUserById(id);
         if (user == null)
             return BadRequest("Invalid id");
@@ -43,7 +47,7 @@ public class UserController(IUserService iUserService, IAuthorizationService iAu
  (string type,int userId)=iAuthorizationService.GetUserClaims(User);
         if (newUser.Id == userId)//מנהל לא יכול ליצור את עצמו
         {
-            return Unauthorized();
+            return Unauthorized("Unauthorized: You don't have permission to perform this action.");
         }
         iUserService.Create(newUser);
         return CreatedAtAction(nameof(Create), new { id = newUser.Id }, newUser);
@@ -58,7 +62,7 @@ public class UserController(IUserService iUserService, IAuthorizationService iAu
         (string type,int userId)=iAuthorizationService.GetUserClaims(User);
         if (iAuthorizationService.IsAccessDenied(id,type,userId)|| type.Equals("User")&&newUser.Type.Equals("Admin"))
         {
-            return Unauthorized();
+            return Unauthorized("Unauthorized: You don't have permission to perform this action.");
         }
         User? oldUser = iUserService.GetUserById(id);
         if (oldUser == null)
@@ -72,12 +76,13 @@ public class UserController(IUserService iUserService, IAuthorizationService iAu
     [Authorize(Policy = "Admin")]
     public ActionResult Delete(int id)
     {
+         (string type,int userId)=iAuthorizationService.GetUserClaims(User);
         //האם מנהל יכול למחוק את עצמו
         //string jwtEncoded = Request.Headers.Authorization;
         User? userForDelete = iUserService.GetUserById(id);
         if (userForDelete == null)
             return BadRequest("Invalid id");
-        iUserService.Delete(id);
+        iUserService.Delete(id,type,userId);
         return NoContent();
     }
 [AllowAnonymous]
@@ -86,7 +91,7 @@ public ActionResult Login([FromBody] User user)
 {
  User? existUser =iUserService.GetExistUser(user);
     if (existUser == null)
-      return  Unauthorized();
+      return  Unauthorized("Unauthorized: You don't have permission to perform this action.");
      string? generatedToken=iUserService.Login(existUser);
 
     if (string.IsNullOrEmpty(generatedToken ))

@@ -8,10 +8,8 @@ namespace Project.Services
 {
     public class JewelService : IJewelService
     {
-        private List<Jewel> JewelryList {get;set;}
-        private UpdateJson<Jewel> UpdateJson {get;set;}
-
-       
+        private List<Jewel> JewelryList { get; set; }
+        private UpdateJson<Jewel> UpdateJson { get; set; }
         public JewelService()
         {
             string basePath = Directory.GetCurrentDirectory();
@@ -24,48 +22,49 @@ namespace Project.Services
         ///CRUD///
 
         //פונקציה לקבלת רשימת הנתונים-GET
-        public List<Jewel> GetAllList(string type,int userId)
+        public List<Jewel> GetAllList(string type, int userId)
         {
-            if(type.Equals("User"))
-            return JewelryList.Where((jewel) => jewel.UserId == userId).ToList();
+            if (type.Equals("User"))
+                return JewelryList.Where((jewel) => jewel.UserId == userId).ToList();
             else
-            return JewelryList;
+                return JewelryList;
         }
+
         //id-פונקציה לקבלת אוביקט לפי 
         public Jewel? GetJewelById(int id)
         {
             // List<Jewel> userJewelryList = GetAllList(type,userId);
             // return userJewelryList.FirstOrDefault(p => p.Id == id);
-               return JewelryList.FirstOrDefault(p => p.Id == id);
-        }  
+            return JewelryList.FirstOrDefault(p => p.Id == id);
+        }
         //מכניס אוביקט חדש לרשימה
         public void Create(Jewel newJewel)
         {
-           int maxId = JewelryList.Any() ? JewelryList.Max(p => p.Id) : 0;
+            int maxId = JewelryList.Any() ? JewelryList.Max(p => p.Id) : 0;
             newJewel.Id = maxId + 1;
             JewelryList.Add(newJewel);
             UpdateJson.UpdateListInJson(JewelryList);
-           
+
         }
-   //מעדכן אוביקט מהרשימה
-        public void Update( Jewel oldJewel, Jewel newJewel)
+        //מעדכן אוביקט מהרשימה
+        public void Update(Jewel oldJewel, Jewel newJewel)
         {
-             
-         oldJewel.Name = newJewel.Name;
-         oldJewel.Price = newJewel.Price;
-         oldJewel.Category = newJewel.Category;
-          UpdateJson.UpdateListInJson(JewelryList);
-           
+
+            oldJewel.Name = newJewel.Name;
+            oldJewel.Price = newJewel.Price;
+            oldJewel.Category = newJewel.Category;
+            UpdateJson.UpdateListInJson(JewelryList);
+
         }
 
         //ID-פונקציה למחיקת אוביקט לפי 
         public void Delete(Jewel jewel)
         {
-           
-                int index = JewelryList.IndexOf(jewel);
-                JewelryList.RemoveAt(index);
-                 UpdateJson.UpdateListInJson(JewelryList);
-            
+
+            int index = JewelryList.IndexOf(jewel);
+            JewelryList.RemoveAt(index);
+            UpdateJson.UpdateListInJson(JewelryList);
+
         }
 
     }
@@ -77,6 +76,6 @@ namespace Project.Services
             BuilderServices.AddSingleton<IJewelService, JewelService>();
         }
     }
-   
+
 }
 

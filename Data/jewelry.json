@@ -1,16 +1,16 @@
 [
   {
-    "Id": 3,
-    "UserId": 0,
-    "Name": "\u05D8\u05D1\u05E2\u05EA \u05E0\u05D5\u05E6\u05E6\u05EA",
-    "Price": 50,
-    "Category": 0
+    "Id": 5,
+    "UserId": 9,
+    "Name": "\u05E9\u05E8\u05E9\u05EA \u05DE\u05D0\u05DC\u05E4\u05EA\u05EA\u05EA",
+    "Price": 1000,
+    "Category": 2
   },
   {
-    "Id": 4,
-    "UserId": 2,
-    "Name": "string",
-    "Price": 0,
-    "Category": 0
+    "Id": 6,
+    "UserId": 10,
+    "Name": "\u05D8\u05D1\u05E2\u05EA \u05E0\u05D5\u05E6\u05E6\u05EA",
+    "Price": 1900,
+    "Category": 1
   }
 ]
