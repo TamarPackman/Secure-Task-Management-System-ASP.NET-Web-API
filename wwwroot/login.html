@@ -4,74 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/login.css">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-
     <title>Login</title>
-    <!-- <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-image: '';
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-         
-            background-image: url('/img/background.jpg');
-            background-size: cover; /* כיסוי מלא של המסך */
-    background-position: center; /* מיקום התמונה במרכז */
-    background-repeat: no-repeat; /* שלא יחזור על עצמו */
-    height: 100vh; /* גובה כל הדף */
-    margin: 0; /* ביטול שוליים */
-        }
-
-        .login-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 10px;
-            background-color:#f691a3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .login-btn:hover {
-            background-color: #f691a3;
-        }
-
-        .error-message {
-            color: red;
-            font-size: 14px;
-            display: none;
-            margin-top: 10px;
-        }
-    </style> -->
 </head>
 <body>
     <div class="login-container">
@@ -79,7 +12,6 @@
         <input type="text" id="username" placeholder="שם משתמש">
         <input type="password" id="password" placeholder="סיסמה">
         <button class="login-btn" onclick="login()">כניסה</button>
-        <button id="googleSignInButton">Sign in with Google</button>
         <p class="error-message" id="errorMessage">שם משתמש או סיסמה לא נכונים</p>
     </div>
     <script>
@@ -116,14 +48,20 @@
         alert(err);
     })  
         }
-
+        function onGoogleSignInLoad() {
+    gapi.load('auth2', function() {
+        gapi.auth2.init({
+            client_id:'943649232432-b215hmri1rpq6te3nbtqufi460ml4e3c.apps.googleusercontent.com'// הכניסי את ה-Client ID שלך כאן
+        });
+    });
+}
         document.getElementById('googleSignInButton').addEventListener('click', function() {
     gapi.auth2.getAuthInstance().signIn().then(function(googleUser) {
         var id_token = googleUser.getAuthResponse().id_token;
         console.log(id_token);
 
         // שליחת ה-ID Token ל-Backend שלך
-        fetch('/auth/google', {
+        fetch('/User/google', {
             method: 'POST',
             body: JSON.stringify({ token: id_token }),
             headers: { 'Content-Type': 'application/json' }

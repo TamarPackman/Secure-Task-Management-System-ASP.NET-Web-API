@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Project.interfaces;
 using Project.Models;
 using IAuthorizationService = Project.interfaces.IAuthorizationService;
-
 namespace Project.Controllers;
 [ApiController]
 [Route("[controller]")]
@@ -19,16 +18,12 @@ public class JewelryController : ControllerBase
         this.iAuthorizationService = iAuthorizationService;
         this.iUserService = iUserService;
     }
-    //פונקציה לקבלת רשימת הנתונים
-
     [HttpGet]
     public ActionResult<List<Jewel>> Get()
     {
         (string type, int userId) = iAuthorizationService.GetUserClaims(User);
         return iJewelService.GetAllList(type, userId);
     }
-
-    //id-פונקציה לקבלת אוביקט לפי 
     [HttpGet("{id}")]
     public ActionResult<Jewel> Get(int id)
     {
@@ -43,7 +38,6 @@ public class JewelryController : ControllerBase
             return Unauthorized("Unauthorized: You don't have permission to perform this action.");
         return jewel;
     }
-    //מכניס אוביקט חדש לרשימה
     [HttpPost]
     public ActionResult Create(Jewel newJewel)
     {
@@ -55,7 +49,6 @@ public class JewelryController : ControllerBase
         iJewelService.Create(newJewel);
         return CreatedAtAction(nameof(Create), new { id = newJewel.Id }, newJewel);
     }
-    //מעדכן אוביקט מהרשימה
     [HttpPut("{id}")]
     public ActionResult Update(int id, Jewel jewel)
     {

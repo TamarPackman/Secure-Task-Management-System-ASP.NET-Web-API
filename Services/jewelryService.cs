@@ -17,11 +17,6 @@ namespace Project.Services
             UpdateJson = new UpdateJson<Jewel>(filePath);
             JewelryList = UpdateJson.GetList();
         }
-
-
-        ///CRUD///
-
-        //פונקציה לקבלת רשימת הנתונים-GET
         public List<Jewel> GetAllList(string type, int userId)
         {
             if (type.Equals("User"))
@@ -30,11 +25,8 @@ namespace Project.Services
                 return JewelryList;
         }
 
-        //id-פונקציה לקבלת אוביקט לפי 
         public Jewel? GetJewelById(int id)
         {
-            // List<Jewel> userJewelryList = GetAllList(type,userId);
-            // return userJewelryList.FirstOrDefault(p => p.Id == id);
             return JewelryList.FirstOrDefault(p => p.Id == id);
         }
         //מכניס אוביקט חדש לרשימה

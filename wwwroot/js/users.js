@@ -30,7 +30,7 @@ const addUser = (event) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+            "Authorization": `Bearer ${token.token}` 
         },
         body: JSON.stringify(newUser)
     })
@@ -54,7 +54,6 @@ const displayEditForm = (id) => {
     document.getElementById('edit-id').value = user.id;
     document.getElementById('edit-password').value = user.password;
     document.getElementById('edit-users-select').value =user.type;
-    // document.getElementById('edit-type').value = user.type;
     document.getElementById('editForm').style.display = 'block';
 }
 const updateUser = (event) => {
@@ -72,7 +71,7 @@ const updateUser = (event) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+            "Authorization": `Bearer ${token.token}` 
         },
         body: JSON.stringify(updatedUser)
     })
@@ -121,7 +120,7 @@ const _displayItems = (data) => {
         let tdPassword = dispalayUserInRow.insertCell(2);
         tdPassword.innerHTML = user.password;
         let tdType = dispalayUserInRow.insertCell(3);
-        tdType.innerHTML =user.type ;
+        tdType.innerHTML =user.type;
         let tdEdit = dispalayUserInRow.insertCell(4);
         tdEdit.appendChild(editButton);
         let deleteButton = button.cloneNode(false);
@@ -130,7 +129,6 @@ const _displayItems = (data) => {
         if(userType=="Admin")
         {
         let tdDelete = dispalayUserInRow.insertCell(5);
-        
         tdDelete.appendChild(deleteButton);
         }
             

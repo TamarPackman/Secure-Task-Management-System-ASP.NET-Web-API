@@ -10,7 +10,6 @@ namespace Project.Services
             int userId = int.Parse(user.FindFirst("UserId")?.Value!);
             return (type, userId);
         }
-
         public bool IsAccessDenied(int id, string userType, int userId)
         {
             return userType == "User" && id != userId;

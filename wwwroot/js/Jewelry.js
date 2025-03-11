@@ -1,41 +1,29 @@
 
- isTokenExpired=(token) =>{//GPT
-        const payloadBase64 = token.split(".")[1]; // פירוק JWT
-        const payloadJSON = atob(payloadBase64); // דיקוד Base64
-        const payload = JSON.parse(payloadJSON); // הפיכת JSON לאובייקט
-        const currentTime = Math.floor(Date.now() / 1000); // זמן נוכחי בשניות
-        return payload.exp < currentTime; // true אם פג תוקף
+ isTokenExpired=(token) =>{
+        const payloadBase64 = token.split(".")[1]; 
+        const payloadJSON = atob(payloadBase64); 
+        const payload = JSON.parse(payloadJSON); 
+        const currentTime = Math.floor(Date.now() / 1000); 
+        return payload.exp < currentTime; 
 }
-// let token = localStorage.getItem("token");
-// token=JSON.parse(token);
 if(token==null)
     window.location.href = "login.html";
 else if (isTokenExpired(token.token)) {
-    localStorage.removeItem("token"); // מחיקת הטוקן
-    window.location.href = "login.html"; // מעבר לדף התחברות
+    localStorage.removeItem("token"); 
+    window.location.href = "login.html"; 
 }
-// userType=(token)=>{
-//     const payloadBase64 = token.split(".")[1]; // פירוק JWT
-//     const payloadJSON = atob(payloadBase64); // דיקוד Base64
-//     const payload = JSON.parse(payloadJSON); // הפיכת JSON לאובייקט
-//     return payload;
-// }
  if(userType==='Admin')
  {
  document.getElementById("Display-users").hidden=false;
  document.getElementById("add-userId").hidden=false;
- 
-
  }
 else
 {
 document.getElementById("Display-user").hidden=false;
 document.getElementById("add-userId").value=userId;
 }
-
- // פונקציה להפניה לדף המשתמשים
  const redirectToUsersPage = () => {
-    window.location.href = "users.html"; // שנה את זה לכתובת הדף שלך
+    window.location.href = "users.html"; 
 };
 const uri = '/Jewelry';
 let jewelryList = [];
@@ -65,14 +53,12 @@ const addJewel = (event) => {
         .then(response => {
             if(!response.ok)
                 return response.text().then(err => { throw new Error(err); });
-                // throw new Error(response.text)
              return   response.json()})
         .then(() => {
             getJewelry();
             nameJewel.value = '';
             pricejewel.value = '';
             categoryJewel.value = '';
-            // userIdJewel.value='';
         })
         .catch(error =>{ console.error('Unable to add jewel.', error);alert(error)});
 }
@@ -105,7 +91,6 @@ const updateJewel = (event) => {
     .then((response)=>{
         if(!response.ok)
             return response.text().then(err => { throw new Error(err); });
-    // return response.json();
     })
         .then(() => getJewelry())
         .catch(error =>{ console.error('Unable to update jewel.', error);alert(error)});
@@ -162,11 +147,10 @@ const deleteJewel = (id) => {
         .catch(error => console.error('Unable to delete jewel.', error));
 }
 const getJewelry = () => {
-    //לקבלת מערך הפריטים GET גישה לפונקציית 
     fetch(uri,{
         headers:{
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+        "Authorization": `Bearer ${token.token}` 
         }
     })
         .then(response =>{ if(!response.ok)
@@ -181,10 +165,10 @@ const getJewel=()=>{
     fetch(`${uri}/${id}`,{
         headers:{
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+        "Authorization": `Bearer ${token.token}` 
         }
     })
-        .then(response =>{ד
+        .then(response =>{
             if(!response.ok)
             {
                 return response.text().then(err => { throw new Error(err); });

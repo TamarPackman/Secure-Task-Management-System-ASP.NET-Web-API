@@ -3,9 +3,9 @@ const logOut=()=>{
     window.location.href = "login.html";
 }
 const userPayload=(token)=>{
-    const payloadBase64 = token.split(".")[1]; // פירוק JWT
-    const payloadJSON = atob(payloadBase64); // דיקוד Base64
-    const payload = JSON.parse(payloadJSON); // הפיכת JSON לאובייקט
+    const payloadBase64 = token.split(".")[1]; 
+    const payloadJSON = atob(payloadBase64); 
+    const payload = JSON.parse(payloadJSON); 
     return payload;
 }
 let token = localStorage.getItem("token");
