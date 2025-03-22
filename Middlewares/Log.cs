@@ -14,27 +14,27 @@ public class LogMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
-        // התחלת מדידת זמן
+     
         var stopwatch = Stopwatch.StartNew();
 
         try
         {
-            // רישום פרטי הבקשה
+          
             Log.Information("Incoming request: {Method} {Path}",
                 context.Request.Method,
                 context.Request.Path);
 
-            // המשך לצינור הבקשות
+          
             await _next(context);
 
-            // רישום סטטוס התגובה
+           
             Log.Information("Response: {StatusCode} (Elapsed: {ElapsedMilliseconds}ms)",
                 context.Response.StatusCode,
                 stopwatch.ElapsedMilliseconds);
         }
         catch (Exception ex)
         {
-            // רישום שגיאות
+          
             Log.Error(ex, "An unhandled exception occurred while processing the request.");
             throw;
         }

@@ -13,13 +13,13 @@ public class ErrorHandlingMiddleware
     {
         try
         {
-            await next(context); // מעביר את הבקשה הלאה בצינור
+            await next(context); 
         }
         catch (Exception ex)
         {
             context.Response.StatusCode = 500;
             context.Response.ContentType = "text/plain";
-            await context.Response.WriteAsync(ex.Message);   // מטפל בשגיאה
+            await context.Response.WriteAsync(ex.Message);   
         }
     }
 }

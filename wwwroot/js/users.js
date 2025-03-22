@@ -93,7 +93,7 @@ const deleteUser = (id) => {
         method: 'DELETE',
         headers:{
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+            "Authorization": `Bearer ${token.token}` 
             }
 
     })
@@ -136,11 +136,10 @@ const _displayItems = (data) => {
     userList = data;
 }
 const getUsers = () => {
-    //לקבלת מערך הפריטים GET גישה לפונקציית 
     fetch(newUri,{
         headers:{
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+        "Authorization": `Bearer ${token.token}` 
         }
     })
         .then(response =>
@@ -160,7 +159,7 @@ const getUser=()=>{
     fetch(`${uri}/${id}`,{
         headers:{
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+        "Authorization": `Bearer ${token.token}` 
         }
     })
         .then(response =>{

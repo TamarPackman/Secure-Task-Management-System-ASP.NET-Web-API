@@ -29,7 +29,7 @@ namespace Project.Services
         {
             return JewelryList.FirstOrDefault(p => p.Id == id);
         }
-        //מכניס אוביקט חדש לרשימה
+     
         public void Create(Jewel newJewel)
         {
             int maxId = JewelryList.Any() ? JewelryList.Max(p => p.Id) : 0;
@@ -38,7 +38,7 @@ namespace Project.Services
             UpdateJson.UpdateListInJson(JewelryList);
 
         }
-        //מעדכן אוביקט מהרשימה
+      
         public void Update(Jewel oldJewel, Jewel newJewel)
         {
 
@@ -48,8 +48,6 @@ namespace Project.Services
             UpdateJson.UpdateListInJson(JewelryList);
 
         }
-
-        //ID-פונקציה למחיקת אוביקט לפי 
         public void Delete(Jewel jewel)
         {
 

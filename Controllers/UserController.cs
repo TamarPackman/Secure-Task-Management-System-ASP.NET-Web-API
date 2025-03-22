@@ -12,14 +12,12 @@ public class UserController(IUserService iUserService, IAuthorizationService iAu
 {  
     private IUserService iUserService = iUserService;
     private IAuthorizationService iAuthorizationService=iAuthorizationService;
-    //פונקציה לקבלת רשימת הנתונים
     [HttpGet]
     [Authorize (Policy="Admin")]
     public ActionResult<List<User>> Get()
     {  
      return iUserService.GetAllList();
     }
-    //id-פונקציה לקבלת אוביקט לפי 
     [HttpGet("{id}")]
     [Authorize]
     public ActionResult<User> Get(int id)
@@ -32,20 +30,20 @@ public class UserController(IUserService iUserService, IAuthorizationService iAu
             return BadRequest("Invalid id");
         return user;
     }
-    //מכניס אוביקט חדש לרשימה
+  
     [HttpPost]
     [Authorize(Policy = "Admin")]
     public ActionResult Create( User newUser)
     {
      (string type,int userId)=iAuthorizationService.GetUserClaims(User);
-        if (newUser.Id == userId)//מנהל לא יכול ליצור את עצמו
+        if (newUser.Id == userId)
         {
             return Unauthorized("Unauthorized: You don't have permission to perform this action.");
         }
         iUserService.Create(newUser);
         return CreatedAtAction(nameof(Create), new { id = newUser.Id }, newUser);
     }
-    //מעדכן אוביקט מהרשימה
+   
     [HttpPut("{id}")]
     [Authorize]
     public ActionResult Update(int id,  User newUser)
@@ -63,14 +61,12 @@ public class UserController(IUserService iUserService, IAuthorizationService iAu
         iUserService.Update(id, newUser);
         return NoContent();
     }
-    //ID-פונקציה למחיקת אוביקט לפי 
+   
     [HttpDelete("{id}")]
     [Authorize(Policy = "Admin")]
     public ActionResult Delete(int id)
     {
          (string type,int userId)=iAuthorizationService.GetUserClaims(User);
-        //האם מנהל יכול למחוק את עצמו
-        //string jwtEncoded = Request.Headers.Authorization;
         User? userForDelete = iUserService.GetUserById(id);
         if (userForDelete == null)
             return BadRequest("Invalid id");
@@ -93,35 +89,5 @@ public ActionResult Login([FromBody] User user)
     return Ok(new { Name = existUser.Name, token = generatedToken });
 }
 }
-// [HttpPost("google")]
-//         public async Task<IActionResult> GoogleLogin([FromBody] TokenRequest request)
-//         {
-//             try
-//             {
-//                 // בדיקת ה-ID Token מול Google
-//                 var payload = await GoogleJsonWebSignature.ValidateAsync(request.Token);
-
-//                 // payload מכיל את המידע על המשתמש
-//                 var userId = payload.Subject;  // מזהה המשתמש בגוגל
-//                 var email = payload.Email;     // אימייל של המשתמש
-//                 var name = payload.Name;       // שם המשתמש
-//                 var picture = payload.Picture; // תמונה (אם יש)
-
-//                 // כאן תוכל לשמור את המידע הזה במאגר נתונים או לבצע פעולה אחרת
-
-//                 return Ok(new { message = "Login successful", userId, email, name, picture });
-//             }
-//             catch (InvalidJwtException ex)
-//             {
-//                 return BadRequest(new { message = "Invalid token", error = ex.Message });
-//             }
-//         }
-//     }
-
-//     public class TokenRequest
-//     {
-//         public string Token { get; set; }
-//     }
-
 
 

@@ -1,20 +1,16 @@
 [
-  {
-    "Id": 9,
-    "Name": "yyy",
-    "Password": "ggbgb",
-    "Type": "Admin"
-  },
+ 
   {
     "Id": 10,
-    "Name": "tamiyy",
-    "Password": "123",
-    "Type": "User"
-  },
-  {
-    "Id": 11,
-    "Name": "riki",
+    "Name": "tami",
     "Password": "123",
     "Type": "Admin"
+  }
+ ,
+  {
+    "Id": 11,
+    "Name": "shira",
+    "Password": "456",
+    "Type": "User"
   }
 ]

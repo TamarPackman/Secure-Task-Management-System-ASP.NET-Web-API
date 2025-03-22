@@ -13,7 +13,6 @@ namespace Project.Services
         private UpdateJson<User> updateJson;
         private  readonly ITokenService iTokenService;
         private readonly IJewelService iJewelService;
-        //בנאי שנקרא בפעם הרשונה שהמחלקה נטענת + אתחול למערך
         public UserService(ITokenService iTokenService,IJewelService iJewelService)
         {
             string basePath = Directory.GetCurrentDirectory();
@@ -24,20 +23,16 @@ namespace Project.Services
             this.iTokenService = iTokenService;
             this.iJewelService=iJewelService;
         }
-        ///CRUD///
-        //פונקציה לקבלת רשימת הנתונים-GET
         public List<User> GetAllList()
         {
            
             return usersList;
         }
-        //id-פונקציה לקבלת אוביקט לפי 
+       
         public User GetUserById(int id)
         { 
          return usersList.FirstOrDefault(user => user.Id == id);
         }
-
-        //מכניס אוביקט חדש לרשימה
         public void Create(User newUser)
         {   
             int maxId = usersList.Any() ? usersList.Max(p => p.Id) : 0;
@@ -47,8 +42,6 @@ namespace Project.Services
             usersList.Add(newUser);
             updateJson.UpdateListInJson(usersList);
         }
-
-        //מעדכן אוביקט מהרשימה
         public void Update(int id, User user)
         {
             User oldUser = GetUserById(id);
@@ -57,8 +50,6 @@ namespace Project.Services
             oldUser.Type = user.Type;
             updateJson.UpdateListInJson(usersList);
         }
-
-        //ID-פונקציה למחיקת אוביקט לפי 
         public void Delete(int id,string type,int userId)
         {
             int index = usersList.IndexOf(GetUserById(id));

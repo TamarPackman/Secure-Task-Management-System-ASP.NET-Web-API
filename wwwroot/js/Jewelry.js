@@ -46,7 +46,7 @@ const addJewel = (event) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+            "Authorization": `Bearer ${token.token}` 
         },
         body: JSON.stringify(newJewel)
     })
@@ -84,7 +84,7 @@ const updateJewel = (event) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+            "Authorization": `Bearer ${token.token}` 
         },
         body: JSON.stringify(updatedJewel)
     })
@@ -136,7 +136,7 @@ const deleteJewel = (id) => {
         method: 'DELETE',
         headers:{
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token.token}` // דוגמה לשימוש ב-Token
+            "Authorization": `Bearer ${token.token}` 
             }
 
     }).then((response)=>{

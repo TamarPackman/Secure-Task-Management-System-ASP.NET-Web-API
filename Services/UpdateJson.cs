@@ -1,6 +1,5 @@
 using Project.Models;
 using System.Text.Json;
-// using System.IO;
 namespace Project.Services;
 
 public class UpdateJson<T>
@@ -15,14 +14,10 @@ public class UpdateJson<T>
     public List<T> GetList()
     {
         string? jsonContent = File.ReadAllText(JsonPath);
-
-        // אם התוכן ריק או null, מחזירים רשימה ריקה
         if (string.IsNullOrWhiteSpace(jsonContent))
         {
             return new List<T>();
         }
-
-        // אם התוכן לא ריק, מבצעים Deserialize
         return JsonSerializer.Deserialize<List<T>>(jsonContent) ?? new List<T>();
     }
 

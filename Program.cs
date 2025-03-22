@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Configure Serilog
 Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
     .WriteTo.Console()
@@ -16,7 +14,7 @@ Log.Logger = new LoggerConfiguration()
         rollingInterval: RollingInterval.Day,
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level}] {Message}{NewLine}{Exception}")
     .CreateLogger();
-// חיבור Serilog למערכת הלוגים של ASP.NET Core
+
 builder.Host.UseSerilog();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();
@@ -32,7 +30,6 @@ builder.Services.AddAuthorization(cfg =>
         cfg.AddPolicy("User", policy => policy.RequireClaim("type", "User"));
     });    
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
     {
@@ -58,9 +55,8 @@ builder.Services.AddUserService();
 builder.Services.AddAuthorizationService();
 builder.Services.AddTokenService();
 var app = builder.Build();
-// רישום ה-Middleware
+
 app.UseLog();
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

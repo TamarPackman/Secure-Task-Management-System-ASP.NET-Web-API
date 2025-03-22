@@ -48,31 +48,11 @@
         alert(err);
     })  
         }
-        function onGoogleSignInLoad() {
-    gapi.load('auth2', function() {
-        gapi.auth2.init({
-            client_id:'943649232432-b215hmri1rpq6te3nbtqufi460ml4e3c.apps.googleusercontent.com'// הכניסי את ה-Client ID שלך כאן
-        });
-    });
-}
-        document.getElementById('googleSignInButton').addEventListener('click', function() {
-    gapi.auth2.getAuthInstance().signIn().then(function(googleUser) {
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log(id_token);
+   
 
-        // שליחת ה-ID Token ל-Backend שלך
-        fetch('/User/google', {
-            method: 'POST',
-            body: JSON.stringify({ token: id_token }),
-            headers: { 'Content-Type': 'application/json' }
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => console.error('Error:', error));
-    });
-});
+       
+      
+       
     </script>
 </body>
 </html>

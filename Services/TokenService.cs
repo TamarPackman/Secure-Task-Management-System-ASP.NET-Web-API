@@ -26,21 +26,11 @@ public class TokenService:ITokenService
             ValidIssuer = issuer,
             ValidAudience = issuer,
             IssuerSigningKey = key,
-            ClockSkew = TimeSpan.Zero // remove delay of token when expire
+            ClockSkew = TimeSpan.Zero 
         };
 
     public  string WriteToken(SecurityToken token) =>
         new JwtSecurityTokenHandler().WriteToken(token);
-
-//      public static  string  GetDetailFromToken(string token,string detail)
-// {
-
-//     token = token.Replace("Bearer ", "").Trim();
-//     var handler = new JwtSecurityTokenHandler();
-//     var jwtToken = handler.ReadJwtToken(token);
-//     string userFromToken =jwtToken.Claims.FirstOrDefault(c => c.Type == detail)?.Value;
-//     return userFromToken;
-// }
 }
 public static partial class ServiceHelper
     {

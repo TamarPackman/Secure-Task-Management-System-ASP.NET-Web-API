@@ -27,9 +27,6 @@ public class JewelryController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult<Jewel> Get(int id)
     {
-        //  (string type,int userId)=iAuthorizationService.GetUserClaims(User);
-        //   if(iAuthorizationService.IsAccessDenied(id,type,userId))
-        // return Unauthorized();
         (string type, int userId) = iAuthorizationService.GetUserClaims(User);
         Jewel? jewel = iJewelService.GetJewelById(id);
         if (jewel == null)
@@ -80,7 +77,3 @@ public class JewelryController : ControllerBase
     }
 
 }
-//לעשות שמנהל אחד לא יוכל לראות גם תכשיטים של מנהל אחר
-//לבדוק שמוסיפים תכשיט לUSER שקיים
-//כשמוחקים כזה USER למחוק לו את התכשיטים
-//לשנות את ה POLICY
