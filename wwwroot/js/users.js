@@ -7,7 +7,7 @@ let newUri=uri;
 let userList = [];
 if(userType==='User')
 {
-    document.getElementById('add-form').hidden=true;
+   document.querySelectorAll('form')[0].style.display='none'
    newUri=`${uri}/${userId}`;
    document.querySelectorAll('th')[5].hidden=true;
    document.getElementById('getBtn').hidden=true;
@@ -18,10 +18,12 @@ const addUser = (event) => {
     event.preventDefault();
     const nameUser = document.getElementById('add-name');
     const passwordUser = document.getElementById('add-password');
+    const emailUser = document.getElementById('add-email');
     const typeUser = document.getElementById('users-select');
    const newUser = {
         id: 0,
         name: nameUser.value.trim(),
+        email: emailUser.value,
         password: passwordUser.value,
         type: typeUser.value
     };
@@ -43,6 +45,7 @@ const addUser = (event) => {
             getUsers();
             nameUser.value = '';
             passwordUser.value = '';
+            emailUser.value = '';
             typeUser.value = '';
         })
         .catch(error => {console.error('Unable to add user.' );alert(error)
@@ -53,6 +56,7 @@ const displayEditForm = (id) => {
     document.getElementById('edit-name').value = user.name;
     document.getElementById('edit-id').value = user.id;
     document.getElementById('edit-password').value = user.password;
+    document.getElementById('edit-email').value = user.email;
     document.getElementById('edit-users-select').value =user.type;
     document.getElementById('editForm').style.display = 'block';
 }
@@ -63,6 +67,7 @@ const updateUser = (event) => {
     const updatedUser = {
         id: parseInt(userId, 10),
         name: document.getElementById('edit-name').value.trim(),
+        email:document.getElementById('edit-email').value.trim(),
         password: document.getElementById('edit-password').value.trim(),
         type: document.getElementById('edit-users-select').value
     };
@@ -117,18 +122,21 @@ const _displayItems = (data) => {
         tdId.innerHTML = user.id;
         let tdName = dispalayUserInRow.insertCell(1);
         tdName.innerHTML = user.name;
-        let tdPassword = dispalayUserInRow.insertCell(2);
+       
+        let tdEmail = dispalayUserInRow.insertCell(2);
+        tdEmail.innerHTML = user.email;
+        let tdPassword = dispalayUserInRow.insertCell(3);
         tdPassword.innerHTML = user.password;
-        let tdType = dispalayUserInRow.insertCell(3);
+        let tdType = dispalayUserInRow.insertCell(4);
         tdType.innerHTML =user.type;
-        let tdEdit = dispalayUserInRow.insertCell(4);
+        let tdEdit = dispalayUserInRow.insertCell(5);
         tdEdit.appendChild(editButton);
         let deleteButton = button.cloneNode(false);
         deleteButton.innerText = 'Delete';
         deleteButton.setAttribute('onclick', `deleteUser(${user.id})`);
         if(userType=="Admin")
         {
-        let tdDelete = dispalayUserInRow.insertCell(5);
+        let tdDelete = dispalayUserInRow.insertCell(6);
         tdDelete.appendChild(deleteButton);
         }
             

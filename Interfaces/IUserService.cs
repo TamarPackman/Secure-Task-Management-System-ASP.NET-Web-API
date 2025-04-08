@@ -16,6 +16,7 @@ namespace Project.interfaces
         void Delete(int id,string type,int userId);
         User? GetExistUser(User user);
         string? Login (User? existUser);
+         public User? GetExistUserAfterSignInWithGoogle(User user);
 
         
 

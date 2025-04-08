@@ -1,8 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
     <link rel="stylesheet" href="./css/login.css">
     <title>Login</title>
 </head>
@@ -11,18 +14,63 @@
         <h2>התחברות</h2>
         <input type="text" id="username" placeholder="שם משתמש">
         <input type="password" id="password" placeholder="סיסמה">
+        <input type="email" id="email" placeholder="אימייל" >
         <button class="login-btn" onclick="login()">כניסה</button>
-        <p class="error-message" id="errorMessage">שם משתמש או סיסמה לא נכונים</p>
-    </div>
+       
+
+    <button id="googleLoginBtn">התחברות עם גוגל</button>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
-        const uri = "/User/login";
+          fetch("https://localhost:5062/User/client-id")
+    .then(res => res.json())
+    .then(data => {
+      google.accounts.id.initialize({
+        client_id: data.clientId,
+        callback: handleCredentialResponse
+      });
+
+     
+  
+    });
+    document.getElementById("googleLoginBtn").addEventListener("click", () => {
+    google.accounts.id.prompt(); // פותח את החלון של גוגל
+  });
+
+  
+         function handleCredentialResponse(response) {
+            ;
+            fetch("https://localhost:5062/User/google", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: response.credential })
+    }).then((response) => {
+      if (response.status === 200) 
+      {
+       return response.text();
+      }
+      else throw new Error("unauthorize");
+    }).then((result)=>{
+       
+        localStorage.setItem("token",result); 
+        window.location.href = "index.html";
+    })
+    .catch((err)=>{
+        console.log("error", err);
+        alert(err);
+    })  
+        }
+       
         const login=()=> {
+            const uri = "/User/login";
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
         const newUser=    {
     Id: 0,
     Name: username,
     Password: password,
+    Email: email,
     Type: ""
   }
             fetch(uri, {
@@ -48,11 +96,18 @@
         alert(err);
     })  
         }
-   
-
+    
        
       
        
+   
+   
+
+    
+    
+
+   
     </script>
+    
 </body>
 </html>

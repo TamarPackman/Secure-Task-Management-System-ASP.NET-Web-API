@@ -59,6 +59,10 @@ namespace Project.Services
           userJewelryList.ForEach(j => { if(j.UserId==id) iJewelService.Delete(j);} );
 
         }
+        public User? GetExistUserAfterSignInWithGoogle(User user)
+        {
+            return usersList.FirstOrDefault(u => u.Email == user.Email );
+        }
         public User? GetExistUser(User user)
         {
             

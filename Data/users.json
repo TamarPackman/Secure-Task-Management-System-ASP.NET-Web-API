@@ -1,16 +1,9 @@
 [
- 
   {
     "Id": 10,
     "Name": "tami",
     "Password": "123",
+    "Email": "tamip1926@gmail.com",
     "Type": "Admin"
-  }
- ,
-  {
-    "Id": 11,
-    "Name": "shira",
-    "Password": "456",
-    "Type": "User"
   }
 ]

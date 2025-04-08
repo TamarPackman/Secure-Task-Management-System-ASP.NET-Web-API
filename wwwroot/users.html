@@ -9,9 +9,10 @@
 <body> 
     <button id="logOut" onclick="logOut()">log out</button>
     <h1>Users CRUD</h1>
-    <form  id="add-form"hidden="false" method="POST" onsubmit="addUser(event)">
+    <form  id="add-form" method="POST" onsubmit="addUser(event)">
         <input type="text" id="add-name" placeholder="Name">
         <input type="password" id="add-password" placeholder="Password">
+        <input type="email" id="add-email" placeholder="Email">
         <select name="options" id="users-select">
             <option value="User">User</option>
             <option value="Admin">Admin</option>
@@ -27,6 +28,7 @@
             <input type="hidden" id="edit-id">
             <input type="text" id="edit-name" placeholder="Name">
             <input type="password" id="edit-password" placeholder="Password">
+            <input type="email" id="edit-email" placeholder="Email">
             <select name="options" id="edit-users-select">
                 <option value="User">User</option>
                 <option value="Admin">Admin</option>
@@ -43,6 +45,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Password</th>
+            <th>Email</th>
             <th>Type</th>
             <th></th>
             <th></th>
