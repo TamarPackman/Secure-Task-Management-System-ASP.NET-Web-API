@@ -3,62 +3,63 @@ using Microsoft.AspNetCore.Mvc;
 using Project.interfaces;
 using Project.Models;
 using IAuthorizationService = Project.interfaces.IAuthorizationService;
+using Task = Project.Models.Task;
 namespace Project.Controllers;
 [ApiController]
 [Route("[controller]")]
 [Authorize]
-public class JewelryController : ControllerBase
+public class TaskController : ControllerBase
 {
-    private IJewelService iJewelService;
+    private ITaskService iTaskService;
     private IUserService iUserService;
     private IAuthorizationService iAuthorizationService;
-    public JewelryController(IJewelService iJewelService, IAuthorizationService iAuthorizationService,IUserService iUserService)
+    public TaskController(ITaskService iTaskService, IAuthorizationService iAuthorizationService,IUserService iUserService)
     {
-        this.iJewelService = iJewelService;
+        this.iTaskService = iTaskService;
         this.iAuthorizationService = iAuthorizationService;
         this.iUserService = iUserService;
     }
     [HttpGet]
-    public ActionResult<List<Jewel>> Get()
+    public ActionResult<List<Task>> Get()
     {
         (string type, int userId) = iAuthorizationService.GetUserClaims(User);
-        return iJewelService.GetAllList(type, userId);
+        return iTaskService.GetAllList(type, userId);
     }
     [HttpGet("{id}")]
-    public ActionResult<Jewel> Get(int id)
+    public ActionResult<Task> Get(int id)
     {
         (string type, int userId) = iAuthorizationService.GetUserClaims(User);
-        Jewel? jewel = iJewelService.GetJewelById(id);
-        if (jewel == null)
+        Task? task = iTaskService.GetTaskById(id);
+        if (task == null)
             return BadRequest("Invalid id");
-        if (iAuthorizationService.IsAccessDenied(jewel.UserId, type, userId))
+        if (iAuthorizationService.IsAccessDenied(task.UserId, type, userId))
             return Unauthorized("Unauthorized: You don't have permission to perform this action.");
-        return jewel;
+        return task;
     }
     [HttpPost]
-    public ActionResult Create(Jewel newJewel)
+    public ActionResult Create(Task newTask)
     {
-      if(iUserService.GetAllList().FirstOrDefault(x => x.Id==newJewel.UserId)==null) 
+      if(iUserService.GetAllList().FirstOrDefault(x => x.Id==newTask.UserId)==null) 
       return BadRequest("The specified user does not exist.");
         (string type, int userId) = iAuthorizationService.GetUserClaims(User);
-        if (iAuthorizationService.IsAccessDenied(newJewel.UserId, type, userId))
+        if (iAuthorizationService.IsAccessDenied(newTask.UserId, type, userId))
             return Unauthorized("Unauthorized: You don't have permission to perform this action.");
-        iJewelService.Create(newJewel);
-        return CreatedAtAction(nameof(Create), new { id = newJewel.Id }, newJewel);
+        iTaskService.Create(newTask);
+        return CreatedAtAction(nameof(Create), new { id = newTask.Id }, newTask);
     }
     [HttpPut("{id}")]
-    public ActionResult Update(int id, Jewel jewel)
+    public ActionResult Update(int id, Task task)
     {
         (string type, int userId) = iAuthorizationService.GetUserClaims(User);
-        if (id != jewel.Id)
+        if (id != task.Id)
             return BadRequest("id mismatch");
-        Jewel? oldJewel = iJewelService.GetJewelById(id);
-        if (oldJewel == null)
+        Task? oldTask = iTaskService.GetTaskById(id);
+        if (oldTask == null)
             return BadRequest("invalid id");
-        if (iAuthorizationService.IsAccessDenied(oldJewel.UserId, type, userId))
+        if (iAuthorizationService.IsAccessDenied(oldTask.UserId, type, userId))
             return Unauthorized("Unauthorized: You don't have permission to perform this action.");
 
-        iJewelService.Update(oldJewel, jewel);
+        iTaskService.Update(oldTask, task);
         return NoContent();
     }
 
@@ -67,12 +68,12 @@ public class JewelryController : ControllerBase
     public ActionResult Delete(int id)
     {
         (string type, int userId) = iAuthorizationService.GetUserClaims(User);
-        Jewel? jewel = iJewelService.GetJewelById(id);
-        if (jewel == null)
+        Task? task = iTaskService.GetTaskById(id);
+        if (task == null)
             return BadRequest("invalid id");
-        if (iAuthorizationService.IsAccessDenied(jewel.UserId, type, userId))
+        if (iAuthorizationService.IsAccessDenied(task.UserId, type, userId))
             return Unauthorized("Unauthorized: You don't have permission to perform this action.");
-        iJewelService.Delete(jewel);
+        iTaskService.Delete(task);
         return NoContent();
     }
 

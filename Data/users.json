@@ -5,5 +5,12 @@
     "Password": "123",
     "Email": "tamip1926@gmail.com",
     "Type": "Admin"
+  },
+  {
+    "Id": 11,
+    "Name": "riki",
+    "Password": "1234",
+    "Email": "r0534162403@gmail.com",
+    "Type": "User"
   }
 ]

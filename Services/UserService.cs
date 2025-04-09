@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Http.Features;
 using Project.interfaces;
 using Project.Models;
 using Project.Services;
+using Task= Project.Models.Task;
+
 
 namespace Project.Services
 {
@@ -12,8 +14,8 @@ namespace Project.Services
         private List<User> usersList { get; }
         private UpdateJson<User> updateJson;
         private  readonly ITokenService iTokenService;
-        private readonly IJewelService iJewelService;
-        public UserService(ITokenService iTokenService,IJewelService iJewelService)
+        private readonly ITaskService iTaskService;
+        public UserService(ITokenService iTokenService,ITaskService iTaskService)
         {
             string basePath = Directory.GetCurrentDirectory();
             string filePath = Path.Combine(basePath, "Data", "users.json");
@@ -21,7 +23,7 @@ namespace Project.Services
             usersList = updateJson.GetList();
             Console.WriteLine(usersList);
             this.iTokenService = iTokenService;
-            this.iJewelService=iJewelService;
+            this.iTaskService=iTaskService;
         }
         public List<User> GetAllList()
         {
@@ -55,8 +57,8 @@ namespace Project.Services
             int index = usersList.IndexOf(GetUserById(id));
             usersList.RemoveAt(index);
             updateJson.UpdateListInJson(usersList);  
-          List<Jewel> userJewelryList= iJewelService.GetAllList(type,userId);
-          userJewelryList.ForEach(j => { if(j.UserId==id) iJewelService.Delete(j);} );
+          List<Task> userTaskList= iTaskService.GetAllList(type,userId);
+          userTaskList.ForEach(j => { if(j.UserId==id) iTaskService.Delete(j);} );
 
         }
         public User? GetExistUserAfterSignInWithGoogle(User user)

@@ -51,7 +51,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Jewelry", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Task", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -70,7 +70,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddJewelService();
+builder.Services.AddTaskService();
 builder.Services.AddUserService();
 builder.Services.AddAuthorizationService();
 builder.Services.AddTokenService();

@@ -1,5 +1,5 @@
 
-const redirectToJewleryPage=()=>{
+const redirectToTaskPage=()=>{
     window.location.href="index.html";
 }
 const uri = '/User';

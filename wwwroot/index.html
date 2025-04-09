@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Jewelry CRUD</title>
+    <title>Tasks CRUD</title>
     <link rel="stylesheet" href="./css/site.css">
 </head>
 <body> 
     <button id="logOut" onclick="logOut()">log out</button>
-    <h1>Jewelry CRUD</h1>
-    <form method="POST" onsubmit="addJewel(event)">
+    <h1>Tasks CRUD</h1>
+    <form method="POST" onsubmit="addTask(event)">
         <input type="text" id="add-name" placeholder="Name">
-        <input type="number" id="add-price" placeholder="Price">
+        <input type="text" id="add-Description" placeholder="Description">
         <input type="number" id="add-userId" placeholder="userId" hidden=true>
-        <select name="options" id="jewelry-select">
-            <option value="Ring">Ring</option>
-            <option value="Earrings">Earrings</option>
-            <option value="Necklace">Necklace</option>
-            <option value="Bracelet">Bracelet</option>
+        <select name="options" id="Task-select">
+            <option value="NotStarted">Not started</option>
+            <option value="InProgress">In progress</option>
+            <option value="Completed">Completed</option>
+            <option value="OnHold">On hold</option>
         </select>
         <input type="submit" value="Add">
     </form>
@@ -28,39 +28,39 @@
     <br>
     <div id="editForm">
         <h3>Edit</h3>
-        <form onsubmit="updateJewel(event)">
+        <form onsubmit="updateTask(event)">
             <input type="hidden" id="edit-id">
             <input type="text" id="edit-name" placeholder="Name">
-            <input type="number" id="edit-price" placeholder="Price">
-            <select name="options" id="edit-jewelry-select">
-                <option value="Ring">Ring</option>
-                <option value="Earrings">Earrings</option>
-                <option value="Necklace">Necklace</option>
-                <option value="Bracelet">Bracelet</option>
+            <input type="text" id="edit-Description" placeholder="Description">
+            <select name="options" id="edit-Task-select">
+                <option value="NotStarted">Not started</option>
+            <option value="InProgress">In progress</option>
+            <option value="Completed">Completed</option>
+            <option value="OnHold">On hold</option>
             </select>
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
         </form>
     </div>
     <input type="number" id="idInput" placeholder="Enter ID">
-<button onclick="getJewel()" id="getBtn">Get jewel</button>
+<button onclick="getTask()" id="getBtn">Get Task</button>
     <br><br>
     <table>
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>UserId</th>
-            <th>Price</th>
-            <th>Category</th>
+            <th>Description</th>
+            <th>Status</th>
             <th></th>
             <th></th>
         </tr>
-        <tbody id="Jewelry-table"></tbody>
+        <tbody id="Task-table"></tbody>
     </table>
     <script src="js/site.js"></script>
-    <script src="js/Jewelry.js"></script>
+    <script src="js/Task.js"></script>
     <script type="text/javascript">
-      getJewelry();
+      getTasks();
     </script>
 </body>
 </html>

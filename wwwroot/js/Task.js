@@ -25,21 +25,21 @@ document.getElementById("add-userId").value=userId;
  const redirectToUsersPage = () => {
     window.location.href = "users.html"; 
 };
-const uri = '/Jewelry';
-let jewelryList = [];
-const addJewel = (event) => {
+const uri = '/Task';
+let TaskList = [];
+const addTask = (event) => {
     event.preventDefault();
-    const nameJewel = document.getElementById('add-name');
-    const pricejewel  = document.getElementById('add-price');
-    const categoryJewel = document.getElementById('jewelry-select');
-    const  userIdJewel=document.getElementById('add-userId');
-    const indexCategory = categoryJewel.selectedIndex;
-    const newJewel = {
+    const nameTask = document.getElementById('add-name');
+    const DescriptionTask  = document.getElementById('add-Description');   
+    const categoryTask = document.getElementById('Task-select');
+    const  userIdTask=document.getElementById('add-userId');
+    const indexCategory = categoryTask.selectedIndex;
+    const newTask = {
         id: 0,
-        userId:userIdJewel.value!==''?userIdJewel.value.trim():0,
-        name: nameJewel.value.trim(),
-        price:pricejewel.value!=='' ?pricejewel.value.trim():0,
-        category: indexCategory
+        userId:userIdTask.value!==''?userIdTask.value.trim():0,
+        name: nameTask.value.trim(),
+        description:DescriptionTask.value.trim(),
+        status: indexCategory
     };
     fetch(uri, {
         method: 'POST',
@@ -48,52 +48,52 @@ const addJewel = (event) => {
             'Content-Type': 'application/json',
             "Authorization": `Bearer ${token.token}` 
         },
-        body: JSON.stringify(newJewel)
+        body: JSON.stringify(newTask)
     })
         .then(response => {
             if(!response.ok)
                 return response.text().then(err => { throw new Error(err); });
              return   response.json()})
         .then(() => {
-            getJewelry();
-            nameJewel.value = '';
-            pricejewel.value = '';
-            categoryJewel.value = '';
+            getTasks();
+            nameTask.value = '';
+            DescriptionTask.value = '';
+            categoryTask.value = '';
         })
-        .catch(error =>{ console.error('Unable to add jewel.', error);alert(error)});
+        .catch(error =>{ console.error('Unable to add task.', error);alert(error)});
 }
 const displayEditForm = (id) => {
-    const item = jewelryList.find(item => item.id === id);
+    const item = TaskList.find(item => item.id === id);
     document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-id').value = item.id;
-    document.getElementById('edit-price').value = item.price;
-    document.getElementById('edit-jewelry-select').selectedIndex = item.category;
+    document.getElementById('edit-Description').value = item.description;
+    document.getElementById('edit-Task-select').selectedIndex = item.status;
     document.getElementById('editForm').style.display = 'block';
 }
-const updateJewel = (event) => {
+const updateTask = (event) => {
     event.preventDefault();
-    const jewelId = document.getElementById('edit-id').value;
-    const updatedJewel = {
-        id: parseInt(jewelId, 10),
+    const TaskId = document.getElementById('edit-id').value;
+    const updatedTask = {
+        id: parseInt(TaskId, 10),
         name: document.getElementById('edit-name').value.trim(),
-        price: document.getElementById('edit-price').value.trim(),
-        category: document.getElementById('edit-jewelry-select').selectedIndex
+        description: document.getElementById('edit-Description').value.trim(),
+        status: document.getElementById('edit-Task-select').selectedIndex
     };
-    fetch(`${uri}/${jewelId}`, {
+    fetch(`${uri}/${TaskId}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             "Authorization": `Bearer ${token.token}` 
         },
-        body: JSON.stringify(updatedJewel)
+        body: JSON.stringify(updatedTask)
     })
     .then((response)=>{
         if(!response.ok)
             return response.text().then(err => { throw new Error(err); });
     })
-        .then(() => getJewelry())
-        .catch(error =>{ console.error('Unable to update jewel.', error);alert(error)});
+        .then(() => getTasks())
+        .catch(error =>{ console.error('Unable to update task.', error);alert(error)});
     closeInput();
     return false;
 }
@@ -102,7 +102,7 @@ const closeInput = () => {
 }
 
 const _displayItems = (data) => {
-    const tBody = document.getElementById('Jewelry-table');
+    const tBody = document.getElementById('Task-table');
     tBody.innerHTML = '';
     const button = document.createElement('button');
     data.forEach(item => {
@@ -111,27 +111,27 @@ const _displayItems = (data) => {
         editButton.setAttribute('onclick', `displayEditForm(${item.id})`);
         let deleteButton = button.cloneNode(false);
         deleteButton.innerText = 'Delete';
-        deleteButton.setAttribute('onclick', `deleteJewel(${item.id})`);
-        let dispalayJewelInRow = tBody.insertRow();
-        let tdId = dispalayJewelInRow.insertCell(0);
+        deleteButton.setAttribute('onclick', `deleteTask(${item.id})`);
+        let dispalayTaskInRow = tBody.insertRow();
+        let tdId = dispalayTaskInRow.insertCell(0);
         tdId.innerHTML = item.id;
-        let tdName = dispalayJewelInRow.insertCell(1);
+        let tdName = dispalayTaskInRow.insertCell(1);
         tdName.innerHTML = item.name;
-        let userId = dispalayJewelInRow.insertCell(2);
+        let userId = dispalayTaskInRow.insertCell(2);
         userId.innerHTML = item.userId;
-        let tdPrice = dispalayJewelInRow.insertCell(3);
-        tdPrice.innerHTML = item.price;
-        let tdCategory = dispalayJewelInRow.insertCell(4);
-        item.category > 0 ? tdCategory.innerHTML =document.getElementById("edit-jewelry-select")[item.category].innerHTML:'' ;
-        let tdEdit = dispalayJewelInRow.insertCell(5);
+        let tdDescription = dispalayTaskInRow.insertCell(3);
+        tdDescription.innerHTML = item.description;
+        let tdCategory = dispalayTaskInRow.insertCell(4);
+        item.status >= 0 ? tdCategory.innerHTML =document.getElementById("edit-Task-select")[item.status].innerHTML:'' ;
+        let tdEdit = dispalayTaskInRow.insertCell(5);
         tdEdit.appendChild(editButton);
-        let tdDelete = dispalayJewelInRow.insertCell(6);
+        let tdDelete = dispalayTaskInRow.insertCell(6);
         tdDelete.appendChild(deleteButton);
         
     });
-    jewelryList = data;
+    TaskList = data;
 }
-const deleteJewel = (id) => {
+const deleteTask = (id) => {
     fetch(`${uri}/${id}`, {
         method: 'DELETE',
         headers:{
@@ -143,10 +143,10 @@ const deleteJewel = (id) => {
         if(!response.ok)
             return response.text().then(err => { throw new Error(err); });
     })
-        .then(() => getJewelry())
-        .catch(error => console.error('Unable to delete jewel.', error));
+        .then(() => getTasks())
+        .catch(error => console.error('Unable to delete task.', error));
 }
-const getJewelry = () => {
+const getTasks = () => {
     fetch(uri,{
         headers:{
         "Content-Type": "application/json",
@@ -160,7 +160,7 @@ const getJewelry = () => {
         .then(data => _displayItems(data))
         .catch(error => console.error('Unable to get items.', error));
 }
-const getJewel=()=>{
+const getTask=()=>{
     const id=document.getElementById('idInput').value;
     fetch(`${uri}/${id}`,{
         headers:{
