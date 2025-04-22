@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 body {
@@ -10,54 +10,59 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
-    background:
-        linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5)),
-        url('/img/background.jpg');
+    background-color: #e3f2fd; /* צבע רקע בהיר ונעים */
+    background-image: url('../img/Local\ de\ trabalho\ feminino\ com\ xícara\ de\ café\ de\ computador\ portátil\ e\ notebook\ em\ fundo\ rosa\ Vista\ superior\ _\ Foto\ Premium.jpeg'); /* הוסף את הנתיב לתמונה שלך */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
     margin: 0;
 }
 
 .login-container {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
     text-align: center;
 }
 
 h1 {
     margin-bottom: 20px;
-    color: #333;
+  color: #b88e9a ;  /* צבע כחול שמתאים לנושא משימות */
+    font-size: 24px;
 }
 
 input {
-    direction: rtl;
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+input:focus {
+    border-color: #b88e9a;
+    outline: none;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
 }
 
 .login-btn {
     width: 100%;
-    padding: 10px;
-    background-color: #ffafb6;
-    color: rgb(48, 47, 47);
+    padding: 12px;
+    background-color: #b88e9a;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 21px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
 }
 
 .login-btn:hover {
-    background-color: #ff9da5;
+    background-color: #b88e9a;
 }
 
 .error-message {
@@ -66,8 +71,15 @@ input {
     display: none;
     margin-top: 10px;
 }
+
 .g-signin2 {
-    width: 250px; /* הגדרת רוחב */
-    height: 50px; /* הגדרת גובה */
-    margin: 0 auto; /* ממרכז את הכפתור */
+    width: 250px;
+    height: 50px;
+    margin: 20px auto;
+}
+
+.task-icon {
+    font-size: 50px;
+    color: #b88e9a;
+    margin-bottom: 15px;
 }

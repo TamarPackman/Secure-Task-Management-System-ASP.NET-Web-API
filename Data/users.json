@@ -12,5 +12,12 @@
     "Password": "1234",
     "Email": "r0534162403@gmail.com",
     "Type": "User"
+  },
+  {
+    "Id": 12,
+    "Name": "",
+    "Password": "",
+    "Email": "",
+    "Type": "User"
   }
 ]

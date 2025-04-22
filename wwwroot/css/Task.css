@@ -2,7 +2,7 @@
 body {
     font-family: 'Georgia', serif;
     background-color: #f7f1f2;
-    background-image: url('https://www.pandora.net/static/bg.jpg'); /* רקע עדין */
+    /* background-image: url('https://www.pandora.net/static/bg.jpg');  */
     background-size: cover;
     background-position: center;
     color: #3d3d3d;
@@ -11,7 +11,7 @@ body {
     body {
         font-family: 'Playfair Display', serif;
         background-color: #fdfcfa;
-        background-image: url('https://images.pandora.net/bg_image.jpg'); /* רקע עדין עם השראה */
+        /* background-image: url('https://images.pandora.net/bg_image.jpg');  */
         background-size: cover;
         background-position: center;
         color: #4d4d4d;
@@ -29,9 +29,9 @@ body {
     }
     
     button {
-        background-color: #e6d5c3;
+        background-color: #b88e9a;
         color: #4d4d4d;
-        border: 1px solid #b39c82;
+        border: 1px solid  #b88e9a;
         padding: 12px 18px;
         border-radius: 25px;
         cursor: pointer;
@@ -40,7 +40,7 @@ body {
     }
     
     button:hover {
-        background-color: #d9c4b1;
+        background-color:  #b88e9a;
         transform: scale(1.05);
     }
     
@@ -134,7 +134,7 @@ body {
     }
     
     button {
-        background-color: #D6A4A4; /* ורוד זהב */
+        background-color: #b88e9a;; /* ורוד זהב */
         color: white;
         border: none;
         padding: 12px 20px;
@@ -146,7 +146,7 @@ body {
     }
     
     button:hover {
-        background-color: #B76E79; /* כהה יותר ב-Hover */
+        background-color: #b88e9a;; /* כהה יותר ב-Hover */
         transform: scale(1.05);
     }
     
@@ -156,7 +156,7 @@ body {
         border-radius: 12px;
         display: inline-block;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        border: 2px solid #D6A4A4;
+        border: 2px solid  #b88e9a;;
         max-width: 400px;
         margin: 20px auto;
     }

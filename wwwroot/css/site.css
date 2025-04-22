@@ -10,7 +10,7 @@ body {
 }
 
 h1, h2 {
-    color: #e07a8a;
+    color: #b88e9a;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -38,7 +38,7 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #ffafb6;
+    background-color: #b88e9a;;
     color: #201d1b; 
     font-size: 16px;
     cursor: pointer;
@@ -47,7 +47,7 @@ button {
 
 input[type="submit"]:hover,
 button:hover {
-    background-color: #ff9fb0;
+    background-color:  #b88e9a;;
 }
 
 table {
